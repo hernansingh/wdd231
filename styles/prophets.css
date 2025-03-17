@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #ffffff;
+    line-height: 1.6;
+    width: 100%;
+}
+
+header, footer {
+    text-align: center;
+    background-color: #073819;
+    margin: 0 auto;
+    padding: 20px;
+    color: #ffffff;
+}
+
+main{
+    max-width: 1400px !important;
+    margin: 20px auto;
+}
+
+#cards{
+    max-width: 1400px !important;
+    margin: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.styles-card{
+    background-color: #e9e8e8;
+    text-align: center;
+    color: black !important;
+    padding: 20px 0;
+}
+
+p{
+    font-weight: 500;
+    font-size: 18px;
+    padding: 0  0 20px 0;
+}
+
+h2{
+    font-size: 32px;
+    padding: 0;
+}
