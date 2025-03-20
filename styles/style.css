@@ -33,7 +33,7 @@ body {
 }
 
 .header-flex{
-    width: 1200px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,23 +78,109 @@ body {
     color: var(--black-color);
 }
 
+/* Hero */
+
+.hero {
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    background: url(../images/Cordoba-Image.webp) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Oscurece un poco la imagen para mejorar el contraste */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Content */
+
+.section-box-container {
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1400px;
+}
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    gap: 10px;
+    width: 100%;
+}
+.dashboard-box {
+    background: #f0f0f0;
+    padding: 0 0 15px 0;
+    border-radius: 5px;
+}
+.box-header-section {
+    font-weight: bold;
+    background: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+.box-content {
+    padding: 10px;
+}
+
 /* Main Content */
 .main {
-    width: 1200px;
     margin: 0 auto;
     padding: var(--padding);
     display: flex;
     flex-direction: column;
+    max-width: 1400px;
+}
+
+.title-container{
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .main__title{
-    margin: 15px 0;
+    margin: 20px 20px 0 20px;
 }
 
 .flex-container-sections{
     display: flex;
     flex-direction: row;
-    gap: 20px
+    gap: 20px;
 }
 
 .section {
@@ -142,8 +228,6 @@ footer {
     background: var(--gray-color);
     color: var(--white-color);
     font-size: 0.9rem;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
@@ -154,6 +238,11 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .title-container{
+        max-width: 100%;
+        padding:  0 20px;
+    }
+
     .main {
         width: 100%;
     }
@@ -177,6 +266,19 @@ footer p {
         display: flex;
         flex-direction: column;
         padding: 0;
+    }
+
+    .section-box-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+    .dashboard-container {
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 10px;
+        width: 100%;
     }
 
     .header-flex{
