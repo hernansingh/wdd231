@@ -1,0 +1,230 @@
+[
+    {
+        "name": "ElectroCórdoba S.A.",
+        "addresses": [
+            {
+                "street": "Av. Colón 1200",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5000",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-123-4567"
+            },
+            {
+                "type": "support",
+                "number": "351-987-6543"
+            }
+        ],
+        "websiteURLs": [
+            "http://electrocordoba.com"
+        ],
+        "imageFileName": "electrocordoba.jpg",
+        "iconFileName": "./images/logos/logo-e.png",
+        "email": "info@electrocordoba.com",
+        "membershipLevel": 3,
+        "otherInformation": {
+            "sector": "Electricidad",
+            "services": ["Instalaciones eléctricas", "Mantenimiento industrial", "Energías renovables"],
+            "yearsInBusiness": 15
+        }
+    },
+    {
+        "name": "ConstruArg S.R.L.",
+        "addresses": [
+            {
+                "street": "Calle San Martín 750",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5000",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-555-1234"
+            }
+        ],
+        "websiteURLs": [
+            "http://construarg.com"
+        ],
+        "imageFileName": "construarg.jpg",
+        "iconFileName": "./images/logos/logo-c.png",
+        "email": "contacto@construarg.com",
+        "membershipLevel": 2,
+        "otherInformation": {
+            "sector": "Construcción",
+            "services": ["Obras civiles", "Remodelaciones", "Consultoría en construcción"],
+            "yearsInBusiness": 10
+        }
+    },
+    {
+        "name": "TechSolutions Córdoba",
+        "addresses": [
+            {
+                "street": "Bv. Chacabuco 300",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5000",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-444-5678"
+            },
+            {
+                "type": "support",
+                "number": "351-444-9876"
+            }
+        ],
+        "websiteURLs": [
+            "http://techsolutionscordoba.com"
+        ],
+        "imageFileName": "techsolutions.jpg",
+        "email": "ventas@techsolutionscordoba.com",
+        "iconFileName": "./images/logos/logo-t.png",
+        "membershipLevel": 3,
+        "otherInformation": {
+            "sector": "Tecnología",
+            "services": ["Desarrollo de software", "Soporte IT", "Consultoría en TI"],
+            "yearsInBusiness": 8
+        }
+    },
+    {
+        "name": "AgroServicios del Sur",
+        "addresses": [
+            {
+                "street": "Ruta 9 Km 500",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5001",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-222-3344"
+            }
+        ],
+        "websiteURLs": [
+            "http://agroserviciosdelsur.com"
+        ],
+        "imageFileName": "agroservicios.jpg",
+        "iconFileName": "./images/logos/logo-a.png",
+        "email": "agro@agroserviciosdelsur.com",
+        "membershipLevel": 1,
+        "otherInformation": {
+            "sector": "Agroindustria",
+            "services": ["Venta de insumos agrícolas", "Asesoramiento técnico", "Maquinaria agrícola"],
+            "yearsInBusiness": 12
+        }
+    },
+    {
+        "name": "FarmaCórdoba",
+        "addresses": [
+            {
+                "street": "Av. Vélez Sarsfield 1500",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5000",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-777-8888"
+            },
+            {
+                "type": "customerService",
+                "number": "351-777-9999"
+            }
+        ],
+        "websiteURLs": [
+            "http://farmacordoba.com"
+        ],
+        "imageFileName": "farmacordoba.jpg",
+        "iconFileName": "./images/logos/logo-s.png",
+        "email": "contacto@farmacordoba.com",
+        "membershipLevel": 2,
+        "otherInformation": {
+            "sector": "Farmacéutico",
+            "services": ["Distribución de medicamentos", "Venta al público", "Asesoramiento farmacéutico"],
+            "yearsInBusiness": 20
+        }
+    },
+    {
+        "name": "Logística Córdoba",
+        "addresses": [
+            {
+                "street": "Ruta 20 Km 10",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5002",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-666-5555"
+            }
+        ],
+        "websiteURLs": [
+            "http://logisticacordoba.com"
+        ],
+        "imageFileName": "logistica_cordoba.jpg",
+        "iconFileName": "./images/logos/logo-l.png",
+        "email": "hola@logisticacordoba.com",
+        "membershipLevel": 1,
+        "otherInformation": {
+            "sector": "Logística",
+            "services": ["Transporte de carga", "Almacenamiento", "Distribución nacional"],
+            "yearsInBusiness": 7,
+            "specialties": ["Logística internacional", "Cadena de frío"]
+        }
+    },
+    {
+        "name": "GourmetCórdoba",
+        "addresses": [
+            {
+                "street": "Calle Belgrano 200",
+                "city": "Córdoba",
+                "state": "Córdoba",
+                "postalCode": "5000",
+                "country": "Argentina"
+            }
+        ],
+        "phoneNumbers": [
+            {
+                "type": "office",
+                "number": "351-333-2222"
+            },
+            {
+                "type": "reservations",
+                "number": "351-333-1111"
+            }
+        ],
+        "websiteURLs": [
+            "http://gourmetcordoba.com"
+        ],
+        "imageFileName": "gourmet_cordoba.jpg",
+        "iconFileName": "./images/logos/logo-g.png",
+        "email": "info@gourmetcordoba.com",
+        "membershipLevel": 3,
+        "otherInformation": {
+            "sector": "Gastronomía",
+            "services": ["Catering para eventos", "Restaurante gourmet", "Clases de cocina"],
+            "yearsInBusiness": 5,
+            "specialties": ["Cocina internacional", "Eventos corporativos"]
+        }
+    }
+]
