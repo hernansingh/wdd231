@@ -1,16 +1,106 @@
+//CLIMA
+
+function formatearHora(timestamp) {
+    const fecha = new Date(timestamp * 1000);
+    return fecha.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+async function mostrarClima() {
+    try {
+        const respuesta = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=-31.412944&lon=-64.191894&units=metric&appid=5905bd667bcf0a5abb2546c84aaa6adf');
+
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+        const datosClima = await respuesta.json();
+
+        const tempElement = document.getElementById('temp');
+        const maxTempElement = document.getElementById('max-temp');
+        const lowTempElement = document.getElementById('low-temp');
+        const humidityElement = document.getElementById('humidity');
+        const sunsetElement = document.getElementById('sunset');
+        const sunriseElement = document.getElementById('sunrise');
+
+        console.log(datosClima);
+
+        tempElement.textContent = `Temp: ${datosClima.main.temp}°C`;
+        maxTempElement.textContent = `Max Temp: ${datosClima.main.temp_max}°C`;
+        lowTempElement.textContent = `Low Temp: ${datosClima.main.temp_min}°C`;
+        humidityElement.textContent = `Humidity: ${datosClima.main.humidity}%`;
+        sunsetElement.textContent = `Sunset: ${formatearHora(datosClima.sys.sunset)}`;
+        sunriseElement.textContent = `Sunrise: ${formatearHora(datosClima.sys.sunrise)}`;
+        
+    } catch (error) {
+        console.error("Error al obtener el clima:", error.message);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarClima();
+});
+
+//NEXT WEATHER
+
+async function mostrarPronostico() {
+    try {
+        const respuesta = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=-31.412944&lon=-64.191894&units=metric&appid=5905bd667bcf0a5abb2546c84aaa6adf');
+
+        if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+
+        const datosPronostico = await respuesta.json();
+        const listaPronosticos = datosPronostico.list;
+
+        const pronosticosPorDia = {};
+        listaPronosticos.forEach(item => {
+            const fecha = new Date(item.dt * 1000).toDateString();
+            if (!pronosticosPorDia[fecha]) {
+                pronosticosPorDia[fecha] = item;
+            }
+        });
+
+        const fechas = Object.keys(pronosticosPorDia);
+
+        const pronosticoManana = pronosticosPorDia[fechas[1]];
+        const pronosticoPasadoManana = pronosticosPorDia[fechas[2]];
+        const pronosticoDiaSiguiente = pronosticosPorDia[fechas[3]];
+
+        document.getElementById('today').textContent = `Today: ${pronosticoManana.main.temp} °C`;
+
+        document.getElementById('tomorrow').textContent = `Tomorrow: ${pronosticoPasadoManana.main.temp} °C`;
+
+        document.getElementById('other-day').textContent = `The day after tomorrow: ${pronosticoDiaSiguiente.main.temp} °C`;
+
+    } catch (error) {
+        console.error("Error al obtener el pronóstico:", error.message);
+    }
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarPronostico();
+});
+
+// FOOTER
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
+// MENU
 const menuButton = document.getElementById('menu');
 const nav = document.querySelector('.nav');
-const companiesContainer = document.getElementById("companies");
-const listView = document.getElementById("listView");
-const gridView = document.getElementById("gridView");
 
 menuButton.addEventListener('click', function() {
     menuButton.classList.toggle('open');
     nav.classList.toggle('open');
 });
 
-document.getElementById('currentyear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+
+// COMPANIES
+const companiesContainer = document.getElementById("companies");
+const listView = document.getElementById("listView");
+const gridView = document.getElementById("gridView");
+
 
 const displayCompanies = (companies) => {
 
