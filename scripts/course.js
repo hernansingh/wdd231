@@ -86,18 +86,14 @@ function createElementCard(listCourses) {
     const list = document.createElement('ul');
     list.classList.add('list-items');
 
-    const title = document.createElement('h2');
-    title.classList.add('section__title');
-    title.textContent = listCourses[0].certificate;
-
     listCourses.forEach((course) => {
-        const newElementList = document.createElement('li');
-        newElementList.textContent = course.title;
+        const li = document.createElement('li');
+        li.textContent = `${course.subject} ${course.number} — ${course.title} (${course.credits} credits)`;
 
-        list.append(newElementList);
+        list.append(li);
     });
 
-    coursesContainer.append(title, list);
+    coursesContainer.append(list);
 }
 
 createElementCard(courses);

@@ -73,17 +73,18 @@
                 <img src="./images/cordoba.webp" alt="Córdoba Image" class="section__image">
                 <p class="section__text">This is the city Where I was born 💕. Cordoba, Argentina.</p>
             </section>
-    
-            <section id="courses-lists" class="section sec__3">
-                <h2 class="section__title">Web and Computer Programming certificate</h2>
-                <ul class="list-items">
-                    <li>Introduction to Programming (CSE 110)</li>
-                    <li>Web Fundamentals (WDD 130)</li>
-                    <li>Programming with Functions (CSE 111)</li>
-                    <li>Programming with Classes (CSE 210)</li>
-                    <li>Dynamic Web Fundamentals (WDD 131)</li>
-                    <li>Frontend Web Development I (WDD 231)</li>
-                </ul>
+
+
+            <section class="section sec__3">
+            <h2 class="section__title">Web and Computer Programming</h2>
+            <div class="filter-controls">
+                <button data-filter="ALL" class="active">All Courses</button>
+                <button data-filter="WDD">WDD Courses</button>
+                <button data-filter="CSE">CSE Courses</button>
+            </div>
+            <div id="courses-lists">
+            </div>
+
             </section>
         </div>
     </main>

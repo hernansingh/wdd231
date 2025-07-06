@@ -233,6 +233,51 @@ body {
     margin: -10px 0 0 0;
 }
 
+/* Filter controls */
+.filter-controls {
+    display: flex;
+    gap: calc(var(--margin) / 2);
+    margin-bottom: var(--margin);
+}
+
+.filter-controls button {
+    background: none;
+    border: 1px solid var(--gray-color);
+    padding: calc(var(--padding) / 2) var(--padding);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-controls button.active {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.list-items li {
+    border-radius: var(--border-radius);
+    background-color: var(--white-color);
+    color: var(--text-color);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* Completed vs. To-do */
+.course--done {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-decoration: line-through;
+    opacity: 0.9;
+}
+
+/* Total credits */
+.total-credits {
+    font-weight: bold;
+    margin-top: var(--margin);
+    color: var(--text-color);
+}
+
 /* Footer */
 footer {
     text-align: center;
