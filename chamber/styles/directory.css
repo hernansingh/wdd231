@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-    --primary-color: #0282b9;
+    --primary-color: #006692;
     --text-color: #333;
     --background-color: #f8f9fa;
     --white-color: #fff;
@@ -114,7 +114,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Oscurece un poco la imagen para mejorar el contraste */
+    background: rgba(0, 0, 0, 0.5); /* Oscurece un poco la imagen para mejorar el contraste */
 }
 
 .hero-content {
