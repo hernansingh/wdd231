@@ -1,5 +1,4 @@
 //CLIMA
-
 function formatearHora(timestamp) {
     const fecha = new Date(timestamp * 1000);
     return fecha.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -40,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //NEXT WEATHER
-
 async function mostrarPronostico() {
     try {
         const respuesta = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat=-31.412944&lon=-64.191894&units=metric&appid=5905bd667bcf0a5abb2546c84aaa6adf');
@@ -77,7 +75,6 @@ async function mostrarPronostico() {
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     mostrarPronostico();
 });
@@ -97,22 +94,151 @@ menuButton.addEventListener('click', function() {
 
 
 // COMPANIES
-const companiesContainer = document.getElementById("companies");
-const listView = document.getElementById("listView");
-const gridView = document.getElementById("gridView");
+// const companiesContainer = document.getElementById("companies");
+// const listView = document.getElementById("listView");
+// const gridView = document.getElementById("gridView");
+
+// const displayCompanies = (companies) => {
+
+//     companiesContainer.innerHTML = "";
+
+//     companies.forEach((company) => {
+//         const card = document.createElement('section');
+//         const divFlex = document.createElement('div');
+//         const titleContainer = document.createElement('div');
+//         const infoContainer = document.createElement('div');
+//         const imgContainer = document.createElement('div');
 
 
-const displayCompanies = (companies) => {
+//         const businessName = document.createElement('h3');
+//         businessName.textContent = company.name;
 
-    companiesContainer.innerHTML = "";
+//         const businessTagLine = document.createElement('p');
+//         businessTagLine.textContent = company.otherInformation.sector;
 
-    companies.forEach((company) => {
+//         const email = document.createElement('p');
+//         email.innerHTML = `EMAIL: ${company.email}`;
+
+//         const phone = document.createElement('p');
+//         phone.innerHTML = `PHONE: ${company.phoneNumbers[0].number}`;
+
+//         const url = document.createElement('a');
+//         url.innerHTML = `URL: ${company.websiteURLs}`;
+//         url.href = company.websiteURLs;
+
+//         const imgLogo = document.createElement('img');
+//         imgLogo.src = company.iconFileName;
+//         imgLogo.alt = company.otherInformation.sector;
+//         imgLogo.setAttribute('loading', 'lazy');
+//         imgLogo.setAttribute('width', '125px');
+//         imgLogo.setAttribute('height', 'auto');
+
+//         titleContainer.appendChild(businessName);
+//         titleContainer.appendChild(businessTagLine);
+//         infoContainer.appendChild(email);
+//         infoContainer.appendChild(phone);
+//         infoContainer.appendChild(url);
+//         imgContainer.appendChild(imgLogo);
+//         divFlex.appendChild(imgContainer);
+//         divFlex.appendChild(infoContainer);
+
+//         card.appendChild(titleContainer);
+//         card.appendChild(divFlex);
+
+//         divFlex.classList.add('flex-column-container')
+//         titleContainer.classList.add('center-title')
+
+//         companiesContainer.appendChild(card);
+//     });
+// }
+
+// async function fetchCompanies() {
+//     const response = await fetch("data/members.json");
+//     const data = await response.json();
+//     companiesContainer.classList.add('members-container');
+//     displayCompanies(data);
+// }
+
+// fetchCompanies()
+
+// gridView.addEventListener('click', function() {
+//     fetchCompanies()
+// });
+
+
+
+// const displayCompaniesList = (companies) => {
+
+//     companiesContainer.innerHTML = "";
+
+//     companies.forEach((company) => {
+//         const cardList = document.createElement('div');
+//         cardList.classList.add('list-companies');
+
+//         const businessNameList = document.createElement('h3');
+//         businessNameList.textContent = company.name;
+
+//         const businessDirectionList = document.createElement('p');
+//         businessDirectionList.innerHTML = `${company.addresses[0].street}, ${company.addresses[0].city}, ${company.addresses[0].state}, ${company.addresses[0].postalCode}, ${company.addresses[0].country}`;
+
+//         const businessTagLineList = document.createElement('p');
+//         businessTagLineList.textContent = company.otherInformation.sector;
+
+//         const urlList = document.createElement('a');
+//         urlList.innerHTML = `URL: ${company.websiteURLs}`;
+//         urlList.href = company.websiteURLs;
+
+//         cardList.appendChild(businessNameList)
+//         cardList.appendChild(businessDirectionList)
+//         cardList.appendChild(businessTagLineList)
+//         cardList.appendChild(urlList)
+
+//         companiesContainer.appendChild(cardList);
+//     });
+// }
+
+// async function fetchCompaniesList() {
+//     const response = await fetch("data/members.json");
+//     const data = await response.json();
+//     displayCompaniesList(data);
+// }
+
+// listView.addEventListener('click', function() {
+//     companiesContainer.classList.remove('members-container');
+//     fetchCompaniesList()
+// });
+
+// Display only elite companies
+const eliteCompaniesContainer = document.getElementById("elite-companies");
+
+const displayEliteCompanies = (companies) => {
+
+    eliteCompaniesContainer.innerHTML = "";
+
+    const level3 = companies.filter(c => c.membershipLevel === 3 || c.membershipLevel === 2);
+
+    function pickRandomThree(arr) {
+        const total = arr.length;
+        if (total <= 3) return [...arr];
+
+        const chosenIndexes = new Set();
+
+        while (chosenIndexes.size < 3) {
+            const randIndex = Math.floor(Math.random() * total);
+            chosenIndexes.add(randIndex);
+        }
+
+        return Array.from(chosenIndexes).map(i => arr[i]);
+    }
+
+    const selectedThree = pickRandomThree(level3);
+
+    selectedThree.forEach((company) => {
         const card = document.createElement('section');
         const divFlex = document.createElement('div');
         const titleContainer = document.createElement('div');
         const infoContainer = document.createElement('div');
         const imgContainer = document.createElement('div');
-
 
         const businessName = document.createElement('h3');
         businessName.textContent = company.name;
@@ -130,6 +256,16 @@ const displayCompanies = (companies) => {
         url.innerHTML = `URL: ${company.websiteURLs}`;
         url.href = company.websiteURLs;
 
+        const level = document.createElement('p');
+
+        if (company.membershipLevel === 3) {
+        level.innerHTML = `COMPANY LEVEL: GOLD`;
+        } else if (company.membershipLevel === 2) {
+        level.innerHTML = `COMPANY LEVEL: SILVER`;
+        } else {
+        level.innerHTML = "MAL";
+        }
+
         const imgLogo = document.createElement('img');
         imgLogo.src = company.iconFileName;
         imgLogo.alt = company.otherInformation.sector;
@@ -142,6 +278,7 @@ const displayCompanies = (companies) => {
         infoContainer.appendChild(email);
         infoContainer.appendChild(phone);
         infoContainer.appendChild(url);
+        infoContainer.appendChild(level);
         imgContainer.appendChild(imgLogo);
         divFlex.appendChild(imgContainer);
         divFlex.appendChild(infoContainer);
@@ -152,62 +289,15 @@ const displayCompanies = (companies) => {
         divFlex.classList.add('flex-column-container')
         titleContainer.classList.add('center-title')
 
-        companiesContainer.appendChild(card);
+        eliteCompaniesContainer.appendChild(card);
     });
 }
 
-async function fetchCompanies() {
+
+async function fetchEliteCompaniesList() {
     const response = await fetch("data/members.json");
     const data = await response.json();
-    companiesContainer.classList.add('members-container');
-    displayCompanies(data);
+    displayEliteCompanies(data);
 }
 
-fetchCompanies()
-
-gridView.addEventListener('click', function() {
-    fetchCompanies()
-});
-
-
-
-const displayCompaniesList = (companies) => {
-
-    companiesContainer.innerHTML = "";
-
-    companies.forEach((company) => {
-        const cardList = document.createElement('div');
-        cardList.classList.add('list-companies');
-
-        const businessNameList = document.createElement('h3');
-        businessNameList.textContent = company.name;
-
-        const businessDirectionList = document.createElement('p');
-        businessDirectionList.innerHTML = `${company.addresses[0].street}, ${company.addresses[0].city}, ${company.addresses[0].state}, ${company.addresses[0].postalCode}, ${company.addresses[0].country}`;
-
-        const businessTagLineList = document.createElement('p');
-        businessTagLineList.textContent = company.otherInformation.sector;
-
-        const urlList = document.createElement('a');
-        urlList.innerHTML = `URL: ${company.websiteURLs}`;
-        urlList.href = company.websiteURLs;
-
-        cardList.appendChild(businessNameList)
-        cardList.appendChild(businessDirectionList)
-        cardList.appendChild(businessTagLineList)
-        cardList.appendChild(urlList)
-
-        companiesContainer.appendChild(cardList);
-    });
-}
-
-async function fetchCompaniesList() {
-    const response = await fetch("data/members.json");
-    const data = await response.json();
-    displayCompaniesList(data);
-}
-
-listView.addEventListener('click', function() {
-    companiesContainer.classList.remove('members-container');
-    fetchCompaniesList()
-});
+fetchEliteCompaniesList()
