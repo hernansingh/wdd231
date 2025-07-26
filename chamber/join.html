@@ -16,12 +16,13 @@
         <link rel="icon" href="./images/favicon.ico">
 
         <!-- REDES -->
-        <meta property="og:title" content="Cordoba Chamber of Commerce - Boosting Businesses" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://hernansingh.github.io/wdd231/chamber/images/cordoba-chamber.jpg" />
-        <meta property="og:url" content="https://hernansingh.github.io/wdd231/chamber/cordoba-chamber" />
-        <meta property="og:description" content="We connect entrepreneurs and businesses to strengthen commerce in Córdoba. Discover our services and events" />
-        <meta property="og:site_name" content="Cordoba Chamber of Commerce" />
+        <meta property="og:title" content="Cordoba Chamber of Commerce - Boosting Businesses">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://hernansingh.github.io/wdd231/chamber/images/cordoba-chamber.jpg">
+        <meta property="og:url" content="https://hernansingh.github.io/wdd231/chamber/cordoba-chamber">
+        <meta property="og:description" content="We connect entrepreneurs and businesses to strengthen commerce in Córdoba. Discover our services and events">
+        <meta property="og:site_name" content="Cordoba Chamber of Commerce">
+
 
         <!-- CSS AND JS -->
         <link rel="stylesheet" href="./styles/directory.css">
@@ -54,25 +55,25 @@
                 <h1 class="h1-form">Membership Application Form</h1>
                 <form method="GET" action="thankyou.html" class="form-styles flex-column-layout label-styles">
                     <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" title="Applicant's First Name" required autocomplete="given-name">
+                    <input type="text" id="first-name" name="first-name" title="Applicant's First Name" required autocomplete="given-name">
 
                     <label for="last-name">Last Name</label>
-                    <input type="text" name="last-name" title="Applicant's Last Name" required autocomplete="family-name">
+                    <input type="text" id="last-name" name="last-name" title="Applicant's Last Name" required autocomplete="family-name">
 
                     <label for="organizational-title">Organizational Title</label>
-                    <input type="text" name="organizational-title" title="Organization Title" required autocomplete="organization-title" pattern="^[A-Za-z\- ]{7,}$">
+                    <input type="text" id="organizational-title" name="organizational-title" title="Organization Title" required autocomplete="organization-title" pattern="^[A-Za-z\- ]{7,}$">
 
                     <label for="email-address">Email Address</label>
-                    <input type="email" name="email-address" title="Applicant's Email" required autocomplete="email" placeholder="for example: myemail@example.com">
+                    <input type="email" id="email-address" name="email-address" title="Applicant's Email" required autocomplete="email" placeholder="for example: myemail@example.com">
 
                     <label for="mobile-phone-number">Mobile Phone Number</label>
-                    <input type="tel" name="mobile-phone-number" title="Applicant's Mobile Phone Number" required autocomplete="tel" placeholder="for example: myemail@example.com">
+                    <input type="tel" id="mobile-phone-number" name="mobile-phone-number" title="Applicant's Mobile Phone Number" required autocomplete="tel" placeholder="for example: myemail@example.com">
 
                     <label for="business-organization-name">Business/Organization's Name</label>
-                    <input type="text" name="business-organization-name" title="Business/Organization's Name" required autocomplete="organization">
+                    <input type="text" id="business-organization-name" name="business-organization-name" title="Business/Organization's Name" required autocomplete="organization">
 
                     <label for="membership-level">Membership Level</label>
-                    <select name="membership-level" required title="Membership Level">
+                    <select id="membership-level" name="membership-level" required title="Membership Level">
                         <option value="">Seleccione una opción</option>
                         <option value="non-profit">NP Membership (for non profit organizations and there is no fee)</option>
                         <option value="bronze">Bronze Membership</option>
@@ -81,7 +82,7 @@
                     </select>
 
                     <label for="business-description">Business/Organization's Description</label>
-                    <textarea name="business-description" rows="4" title="Business Description"></textarea>
+                    <textarea id="business-description" name="business-description" rows="4" title="Business Description"></textarea>
 
                     <input type="hidden" id="form-timestamp" name="form-timestamp">
 
