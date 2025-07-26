@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This website will serve as a resource hub for businesses in Córdoba Capital. The site will provide information on local events, host networking opportunities, create business directories, and encourage local shopping. It aims to promote local economic growth, support local businesses, and foster a sense of community between the businesses.">
+        <meta name="author" content="Hernan Singh">
+        <title>Thank you for your application</title>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        
+        <!-- FAVICON -->
+        <link rel="icon" href="./images/favicon.ico">
+
+        <!-- REDES -->
+        <meta property="og:title" content="Cordoba Chamber of Commerce - Boosting Businesses" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://hernansingh.github.io/wdd231/chamber/images/cordoba-chamber.jpg" />
+        <meta property="og:url" content="https://hernansingh.github.io/wdd231/chamber/cordoba-chamber" />
+        <meta property="og:description" content="We connect entrepreneurs and businesses to strengthen commerce in Córdoba. Discover our services and events" />
+        <meta property="og:site_name" content="Cordoba Chamber of Commerce" />
+
+        <!-- CSS AND JS -->
+        <link rel="stylesheet" href="./styles/directory.css">
+        <script src="./scripts/directory.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-flex">
+                <section class="header__section">
+                    <img src="./images/29013948_7533463.webp" alt="Chamber Logo" class="header__image">
+                    <div class="name__column">
+                        <span class="header__name">Cordoba</span>
+                        <span class="header__subname">Chamber of Commerce</span>
+                    </div>
+                </section>
+
+                <button id="menu"></button>
+                <nav class="nav">
+                    <a href="#">Home</a>
+                    <a href="#">Directory</a>
+                    <a href="#">Join</a>
+                    <a href="#">Discover</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-thankyou">
+          <h1 class="h1-form">Thank you for your application!</h1>
+          <section class="thankyou-container"><div id="thankyou-message" class="message-thank-you"></div></section>
+        </main>
+
+        <footer>
+            <div class="footer-container">
+                <div class="column">
+                    <h3>Cámara de Comercio de Córdoba</h3>
+                    <p>Av. Ficticia 123</p>
+                    <p>Córdoba, Argentina</p>
+                    <p>info@camaracordoba.org</p>
+                    <p>(+54) 351-555-1234</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://youtube.com/" target="_blank" class="ytb-icon">
+                        <img src="./images/youtube.webp" alt="YouTube">
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <img src="./images/x-twitter.webp" alt="Twitter/X">
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank">
+                        <img src="./images/linkedin.webp" alt="LinkedIn">
+                    </a>
+                </div>
+                <div class="column">
+                    <p>WDD231 Class Project</p>
+                    <p>Hernan Joel Singh</p>
+                    <p>&copy; <span id="currentyear"></span> Hernan Singh, Córdoba Argentina.</p>
+                    <p id="lastModified"></p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

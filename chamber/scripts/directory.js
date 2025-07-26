@@ -301,3 +301,23 @@ async function fetchEliteCompaniesList() {
 }
 
 fetchEliteCompaniesList()
+
+
+// Thank you Page Code
+
+const myInfo = new URLSearchParams(window.location.search);
+
+let timestamp = myInfo.get('form-timestamp')
+
+timestamp = new Date().toLocaleString();
+
+document.querySelector('#thankyou-message').innerHTML = `
+<ul>
+  <li><span>First Name:</span> ${myInfo.get('first-name')}</li>
+  <li><span>Last Name:</span> ${myInfo.get('last-name')}</li>
+  <li><span>Email:</span> ${myInfo.get('email-address')}</li>
+  <li><span>Mobile Phone Number:</span> ${myInfo.get('mobile-phone-number')}</li>
+  <li><span>Business Name:</span> ${myInfo.get('business-organization-name')}</li>
+  <li><span>Form Timestamp:</span> ${timestamp}</li>
+</ul>
+`;

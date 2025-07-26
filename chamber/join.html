@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="This website will serve as a resource hub for businesses in Córdoba Capital. The site will provide information on local events, host networking opportunities, create business directories, and encourage local shopping. It aims to promote local economic growth, support local businesses, and foster a sense of community between the businesses.">
+        <meta name="author" content="Hernan Singh">
+        <title>Cordoba Chamber of Commerce</title>
+
+        <!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+        
+        <!-- FAVICON -->
+        <link rel="icon" href="./images/favicon.ico">
+
+        <!-- REDES -->
+        <meta property="og:title" content="Cordoba Chamber of Commerce - Boosting Businesses" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://hernansingh.github.io/wdd231/chamber/images/cordoba-chamber.jpg" />
+        <meta property="og:url" content="https://hernansingh.github.io/wdd231/chamber/cordoba-chamber" />
+        <meta property="og:description" content="We connect entrepreneurs and businesses to strengthen commerce in Córdoba. Discover our services and events" />
+        <meta property="og:site_name" content="Cordoba Chamber of Commerce" />
+
+        <!-- CSS AND JS -->
+        <link rel="stylesheet" href="./styles/directory.css">
+        <script src="./scripts/directory.js" defer></script>
+        <script src="./scripts/join.js" defer></script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-flex">
+                <section class="header__section">
+                    <img src="./images/29013948_7533463.webp" alt="Chamber Logo" class="header__image">
+                    <div class="name__column">
+                        <span class="header__name">Cordoba</span>
+                        <span class="header__subname">Chamber of Commerce</span>
+                    </div>
+                </section>
+
+                <button id="menu"></button>
+                <nav class="nav">
+                    <a href="#">Home</a>
+                    <a href="#">Directory</a>
+                    <a href="#">Join</a>
+                    <a href="#">Discover</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="flex-row-layout section-layout-section">
+            <section class="flex-column-layout">
+                <h1 class="h1-form">Membership Application Form</h1>
+                <form method="GET" action="thankyou.html" class="form-styles flex-column-layout label-styles">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first-name" title="Applicant's First Name" required autocomplete="given-name">
+
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last-name" title="Applicant's Last Name" required autocomplete="family-name">
+
+                    <label for="organizational-title">Organizational Title</label>
+                    <input type="text" name="organizational-title" title="Organization Title" required autocomplete="organization-title" pattern="^[A-Za-z\- ]{7,}$">
+
+                    <label for="email-address">Email Address</label>
+                    <input type="email" name="email-address" title="Applicant's Email" required autocomplete="email" placeholder="for example: myemail@example.com">
+
+                    <label for="mobile-phone-number">Mobile Phone Number</label>
+                    <input type="tel" name="mobile-phone-number" title="Applicant's Mobile Phone Number" required autocomplete="tel" placeholder="for example: myemail@example.com">
+
+                    <label for="business-organization-name">Business/Organization's Name</label>
+                    <input type="text" name="business-organization-name" title="Business/Organization's Name" required autocomplete="organization">
+
+                    <label for="membership-level">Membership Level</label>
+                    <select name="membership-level" required title="Membership Level">
+                        <option value="">Seleccione una opción</option>
+                        <option value="non-profit">NP Membership (for non profit organizations and there is no fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+
+                    <label for="business-description">Business/Organization's Description</label>
+                    <textarea name="business-description" rows="4" title="Business Description"></textarea>
+
+                    <input type="hidden" id="form-timestamp" name="form-timestamp">
+
+                    <button type="submit" class="btn-submit-form-join">Apply for Application</button>
+                </form>
+            </section>
+            <section class="flex-column-layout">
+                <h2 class="h2-form">Membership Levels</h2>
+                <div class="card-membership-information">
+                    <h3>NP Membership</h3>
+                    <p>(for non profit organizations and there is no fee)</p>
+                    <button class="btn-membership" id="btn-open-np">More information</button>
+                </div>
+                <div class="card-membership-information">
+                    <h3>Bronze Membership</h3>
+                    <button class="btn-membership" data-modal="modal-bronze" id="btn-open-bronze">More information</button>
+                </div>
+                <div class="card-membership-information">
+                    <h3>Silver Membership</h3>
+                    <button class="btn-membership" data-modal="modal-silver" id="btn-open-silver">More information</button>                 
+                </div>
+                <div class="card-membership-information">
+                    <h3>Gold Membership</h3>
+                    <button class="btn-membership" data-modal="modal-gold" id="btn-open-gold">More information</button>
+                </div>
+            </section>
+        </main>
+
+        <dialog id="modal-np">
+            <span class="close" id="btn-close-np">&times;</span>
+            <h2>NP Membership Benefits</h2>
+            <ul>
+                <li>No membership fee</li>
+                <li>Access to community forums</li>
+                <li>Basic newsletter subscription</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-bronze">
+            <span class="close" id="btn-close-bronze">&times;</span>
+            <h2>Bronze Membership Benefits</h2>
+            <ul>
+                <li>Discounted event tickets</li>
+                <li>Access to basic training materials</li>
+                <li>Monthly newsletter</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-silver">
+            <span class="close" id="btn-close-silver">&times;</span>
+            <h2>Silver Membership Benefits</h2>
+            <ul>
+                <li>All Bronze benefits</li>
+                <li>Access to premium webinars</li>
+                <li>Early event registration</li>
+            </ul>
+        </dialog>
+
+        <dialog id="modal-gold">
+            <span class="close" id="btn-close-gold">&times;</span>
+            <h2>Gold Membership Benefits</h2>
+            <ul>
+                <li>All Silver benefits</li>
+                <li>1-on-1 mentorship sessions</li>
+                <li>Exclusive networking opportunities</li>
+            </ul>
+        </dialog>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="column">
+                    <h3>Cámara de Comercio de Córdoba</h3>
+                    <p>Av. Ficticia 123</p>
+                    <p>Córdoba, Argentina</p>
+                    <p>info@camaracordoba.org</p>
+                    <p>(+54) 351-555-1234</p>
+                </div>
+                <div class="social-icons">
+                    <a href="https://youtube.com/" target="_blank" class="ytb-icon">
+                        <img src="./images/youtube.webp" alt="YouTube">
+                    </a>
+                    <a href="https://twitter.com/" target="_blank">
+                        <img src="./images/x-twitter.webp" alt="Twitter/X">
+                    </a>
+                    <a href="https://linkedin.com/" target="_blank">
+                        <img src="./images/linkedin.webp" alt="LinkedIn">
+                    </a>
+                </div>
+                <div class="column">
+                    <p>WDD231 Class Project</p>
+                    <p>Hernan Joel Singh</p>
+                    <p>&copy; <span id="currentyear"></span> Hernan Singh, Córdoba Argentina.</p>
+                    <p id="lastModified"></p>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
