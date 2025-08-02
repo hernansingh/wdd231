@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 724 724">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#Degradado_sin_nombre_6);
+      }
+
+      .cls-2 {
+        fill: url(#Degradado_sin_nombre_16);
+      }
+
+      .cls-3 {
+        fill: url(#Degradado_sin_nombre_9);
+      }
+
+      .cls-4 {
+        fill: url(#Degradado_sin_nombre_21);
+      }
+
+      .cls-5 {
+        fill: url(#Degradado_sin_nombre_10);
+      }
+
+      .cls-6 {
+        fill: url(#Degradado_sin_nombre_18);
+      }
+
+      .cls-7 {
+        fill: url(#Degradado_sin_nombre_15);
+      }
+
+      .cls-8 {
+        fill: url(#Degradado_sin_nombre_8);
+      }
+
+      .cls-9 {
+        fill: url(#Degradado_sin_nombre_12);
+      }
+    </style>
+    <linearGradient id="Degradado_sin_nombre_6" data-name="Degradado sin nombre 6" x1="388" y1="685.64" x2="515.87" y2="685.64" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08b2db"/>
+      <stop offset="1" stop-color="#0e74b5"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_8" data-name="Degradado sin nombre 8" x1="246.16" y1="638.7" x2="374.03" y2="638.7" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00dad5"/>
+      <stop offset="1" stop-color="#15b4d5"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_10" data-name="Degradado sin nombre 10" x1="141.5" y1="538.25" x2="269.38" y2="538.25" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00ead0"/>
+      <stop offset="1" stop-color="#00d1d8"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_12" data-name="Degradado sin nombre 12" x1="103.65" y1="392.88" x2="231.52" y2="392.88" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00f8d0"/>
+      <stop offset="1" stop-color="#01e2db"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_15" data-name="Degradado sin nombre 15" x1="145.54" y1="251.55" x2="273.42" y2="251.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00f3d0"/>
+      <stop offset="1" stop-color="#04d8d6"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_18" data-name="Degradado sin nombre 18" x1="249.52" y1="150.09" x2="377.4" y2="150.09" gradientUnits="userSpaceOnUse">
+      <stop offset=".01" stop-color="#02dbd2"/>
+      <stop offset="1" stop-color="#04bed6"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_21" data-name="Degradado sin nombre 21" x1="397.42" y1="119.13" x2="525.29" y2="119.13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0cacd5"/>
+      <stop offset="1" stop-color="#357fc7"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_9" data-name="Degradado sin nombre 9" x1="540.1" y1="158.84" x2="667.97" y2="158.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#357fc7"/>
+      <stop offset="1" stop-color="#5d62bc"/>
+    </linearGradient>
+    <linearGradient id="Degradado_sin_nombre_16" data-name="Degradado sin nombre 16" x1="644.41" y1="265.01" x2="772.28" y2="265.01" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d6dcd"/>
+      <stop offset="1" stop-color="#783caf"/>
+    </linearGradient>
+  </defs>
+  <circle class="cls-1" cx="451.93" cy="685.64" r="63.94"/>
+  <circle class="cls-8" cx="310.09" cy="638.7" r="63.94"/>
+  <circle class="cls-5" cx="205.44" cy="538.25" r="63.94"/>
+  <circle class="cls-9" cx="167.58" cy="392.88" r="63.94"/>
+  <circle class="cls-7" cx="209.48" cy="251.55" r="63.94"/>
+  <circle class="cls-6" cx="313.46" cy="150.09" r="63.94"/>
+  <circle class="cls-4" cx="461.35" cy="119.13" r="63.94"/>
+  <circle class="cls-3" cx="604.03" cy="158.84" r="63.94"/>
+  <circle class="cls-2" cx="708.35" cy="265.01" r="63.94"/>
+</svg>
