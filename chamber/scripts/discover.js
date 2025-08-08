@@ -46,7 +46,6 @@ fetchInterestSubjects();
 
 
 // Last Visit Session
-
 const first_visit = `Welcome! Let us know if you have any questions`
 const fast_visit = `Back so soon! Awesome!`
 const long_last_visit = `You last visited days ago`
@@ -65,7 +64,6 @@ if (stored === null) {
 
   } else {
 
-
   let lastMs = Number(stored);
   
   if (Number.isNaN(lastMs)) {
@@ -74,21 +72,22 @@ if (stored === null) {
     localStorage.setItem("Visita", lastMs.toString());
   }
 
-    const diffMs = now - lastMs;
-    const days = Math.floor(diffMs / msPerDay);
+  const now = Date.now();
+  const diffMs = now - lastMs;
+  const days = Math.floor(diffMs / msPerDay);
 
-    if ((diffMs < 86400000)) {
-      headingLastSession.innerHTML = "";
-      headingLastSession.textContent = fast_visit;
+  if ((diffMs < 86400000)) {
+    headingLastSession.innerHTML = "";
+    headingLastSession.textContent = fast_visit;
 
-    } else if (days === 1) {
-      headingLastSession.textContent = `You last visited 1 day ago`;
-    } else if (days === 2) {
-      headingLastSession.textContent = `You last visited 2 days ago`;
-    } else {
-      headingLastSession.textContent = `You last visited ${days} days ago`;
-    }
+  } else if (days === 1) {
+    headingLastSession.textContent = `You last visited 1 day ago`;
+  } else if (days === 2) {
+    headingLastSession.textContent = `You last visited 2 days ago`;
+  } else {
+    headingLastSession.textContent = `You last visited ${days} days ago`;
+  }
 
-    localStorage.setItem("Visita", now.toString());
+  localStorage.setItem("Visita", now.toString());
 
   }
