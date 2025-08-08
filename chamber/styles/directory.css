@@ -627,6 +627,13 @@ dialog::backdrop {
     overflow-x: clip;          /* ← “cinturón y tiradores”, por si acaso */
 }
 
+@media (min-width: 1024px){
+    .interest-card:hover{
+        box-shadow: 2px 2px 15px #0000002f;
+        transition: 500ms;
+    }
+}
+
 @media (min-width: 1024px) and (max-width: 1200px) {
   #interest-topics {
     grid-template-columns: repeat(3, minmax(300px, 1fr));
