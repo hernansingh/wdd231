@@ -159,26 +159,36 @@ body {
 /* Estrucutra de dos columnas */
 
 .two-column-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--margin);
-    padding: var(--padding);
-    background-color: var(--white-color);
+    width: 1200px;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1fr 550px;
+    gap: 2rem;
+    background-color: #f8f9fa;
     border-radius: var(--border-radius);
+    margin: 0 auto;
+}
+
+
+.image-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .image-column img {
-    max-width: 100%;
-    border-radius: var(--border-radius);
-    object-fit: cover;
+    height: 500px;
+    border-radius: 8px;
+    object-fit: contain;
 }
 
 .content-column {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
 }
 
 .content-column h3 {
@@ -202,25 +212,20 @@ body {
     background-color: var(--primary-color);
     color: var(--white-color);
     border: none;
+    font-size: 18px;
     padding: 10px 20px;
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.primary-btn:hover {
-    background-color: #17a589; /* un tono más oscuro */
-}
-
-/* --- Responsive --- */
-@media (max-width: 768px) {
+@media (max-width: 1240px) {
     .two-column-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .content-column {
-        align-items: center;
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin: 10rem 0 10rem 0;
+        padding: 0 2rem;
+        height: auto;
     }
 
     .content-column h2 {
@@ -229,5 +234,72 @@ body {
 
     .content-column p {
         font-size: 0.95rem;
+    }
+
+    .image-column{
+        align-items: center;
+    }
+}
+
+/* Purpose */
+.lede {
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+  color: var(--gray-color);
+}
+.purpose-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* Scenarios */
+.scenario-list {
+  max-width: 1000px;
+  display: grid;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.scenario-list h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Colors & Fonts */
+
+.color img{
+    width: 600px;
+}
+
+.font-spec {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.font-samples {
+  display: grid;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+.font-sample {
+  font-size: 1rem;
+}
+.font-sample--h1 {
+  font-weight: 800;
+  font-size: 2rem;
+}
+.font-sample--h2 {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+@media (max-width: 1024px) {
+    .color img{
+        width: 80%;
+    }
+    .color{
+        margin: 0 auto;
+        text-align: center;
     }
 }
