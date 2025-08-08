@@ -50,7 +50,7 @@ const first_visit = `Welcome! Let us know if you have any questions`
 const fast_visit = `Back so soon! Awesome!`
 const long_last_visit = `You last visited days ago`
 
-const msPerDay = 86_400_000; 
+const msPerDay = 86_400_000;
 
 const headingLastSession = document.querySelector("#h4-last-session");
 
@@ -74,7 +74,9 @@ if (stored === null) {
 
   const now = Date.now();
   const diffMs = now - lastMs;
-  const days = Math.floor(diffMs / msPerDay);
+
+  // const days = Math.floor(diffMs / msPerDay);
+  const days = 4;
 
   if ((diffMs < 86400000)) {
     headingLastSession.innerHTML = "";
