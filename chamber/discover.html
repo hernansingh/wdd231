@@ -25,7 +25,7 @@
 
         <!-- CSS AND JS -->
         <link rel="stylesheet" href="./styles/directory.css">
-        <script src="./scripts/directory.js" defer></script>
+        <script src="./scripts/discover.js" defer></script>
     </head>
     <body>
         <header class="header">
@@ -49,12 +49,9 @@
         </header>
 
         <main>
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Welcome to Cordoba Chamber of Commerce</h1>
-                    <p>Discover the history and beauty of the Córdoba Cathedral.</p>
-                </div>
-            </section>
+            <div class="topics-container"><h1 class="topics-h1">Topics of interest</h1>
+            <p>Discover some topics of interest.</p></div>
+            <section id="interest-topics"></section>
         </main>
 
         <footer>
@@ -71,13 +68,16 @@
                         <img src="images/youtube.webp" alt="YouTube">
                     </a>
                     <a href="https://twitter.com/" target="_blank">
-                        <img src="images/x.webp" alt="Twitter/X">
+                        <img src="images/x-twitter.webp" alt="Twitter/X">
                     </a>
                     <a href="https://linkedin.com/" target="_blank">
                         <img src="images/linkedin.webp" alt="LinkedIn">
                     </a>
                 </div>
                 <div class="column">
+                    <div class="last-session">
+                        <h4 id="h4-last-session">Welcome! Let us know if you have any questions.</h4>
+                    </div>
                     <p>WDD231 Class Project</p>
                     <p>Hernan Joel Singh</p>
                     <p>&copy; <span id="currentyear"></span> Hernan Singh, Córdoba Argentina.</p>

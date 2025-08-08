@@ -1,0 +1,58 @@
+[
+  {
+    "theme": "Productivity",
+    "image": "./images/interest-images/productivity.webp",
+    "name": "The Efficient Path",
+    "address": "123 Focus Drive, Taskville",
+    "description": "A concept hub dedicated to tools and strategies that help sharpen focus and enhance efficiency."
+  },
+  {
+    "theme": "Happiness",
+    "image": "./images/interest-images/happiness.webp",
+    "name": "Joyful Journey",
+    "address": "456 Bliss Boulevard, Smile City",
+    "description": "A cheerful retreat celebrating the small joys and moments of gratitude in everyday life."
+  },
+  {
+    "theme": "Peace of Mind",
+    "image": "./images/interest-images/peace-of-mind.webp",
+    "name": "Calm Harbor",
+    "address": "789 Serenity Lane, Tranquil Town",
+    "description": "A serene sanctuary for reflection, meditation, and nurturing inner calm."
+  },
+  {
+    "theme": "Personal Development",
+    "image": "./images/interest-images/personal-development.webp",
+    "name": "Growth Central",
+    "address": "101 Progress Road, Self\u2011improve City",
+    "description": "A center for lifelong learning, self-improvement, and unlocking personal potential."
+  },
+  {
+    "theme": "Emotional Well\u2011being",
+    "image": "./images/interest-images/emotional_wellbeing.webp",
+    "name": "Heart Balance",
+    "address": "202 Harmony Avenue, Emotionalville",
+    "description": "A place focused on nurturing emotional health, resilience, and positive relationships."
+  },
+  {
+    "theme": "Business",
+    "image": "./images/interest-images/business.webp",
+    "name": "Enterprise Edge",
+    "address": "303 Commerce Court, Biztown",
+    "description": "A dynamic space exploring leadership, innovation, and modern business strategies."
+  },
+  {
+    "theme": "Money",
+    "image": "./images/interest-images/money.webp",
+    "name": "Wealth Waves",
+    "address": "404 Finance Street, Prosperity",
+    "description": "A finance-focused hub offering insights on smart money management and growth."
+  },
+  {
+    "theme": "Entrepreneurship",
+    "image": "./images/interest-images/entrepreneurship.webp",
+    "name": "Startup Sphere",
+    "address": "505 Innovation Drive, Venture City",
+    "description": "A launchpad for new ideas, startups, and the entrepreneurial spirit."
+  }
+]
