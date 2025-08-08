@@ -1,6 +1,6 @@
 /* Root Variables */
 :root {
-    --primary-color: #20C997; /* Agua verde */
+    --primary-color: #3085c9; 
     --text-color: #333;
     --background-color: #f8f9fa;
     --white-color: #fff;
@@ -27,7 +27,7 @@ body {
 
 /* Header */
 .header {
-    background: var(--primary-color);
+    background: #ffffff00;
     padding: var(--padding);
     color: var(--white-color);
 }
@@ -46,9 +46,7 @@ body {
 }
 
 .header__image {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 200px;
     margin-right: 10px;
 }
 
@@ -69,7 +67,7 @@ body {
 
 .nav a {
     text-decoration: none;
-    color: var(--white-color);
+    color: var(--text-color);
     font-weight: 600;
     transition: color 0.3s;
 }
@@ -83,7 +81,7 @@ body {
 .hero {
     width: 100%;
     height: 100vh; /* Ocupa toda la pantalla */
-    background: url(../images/imagen-hernan-y-noe.webp) no-repeat center center/cover;
+    background: url(../images/hero-image-wireframing.webp) no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +126,6 @@ body {
 }
 
 /* Content */
-
 .section-box-container {
     padding: 20px;
     margin: 0 auto;
@@ -159,247 +156,78 @@ body {
     padding: 10px;
 }
 
-/* Main Content */
-.main {
-    margin: 0 auto;
-    padding: 0;
+/* Estrucutra de dos columnas */
+
+.two-column-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--margin);
+    padding: var(--padding);
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+}
+
+.image-column img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.content-column {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    max-width: 1400px;
+    gap: 12px;
 }
 
-.title-container{
-    max-width: 1400px;
-    margin: 0 auto;
+.content-column h3 {
+    color: var(--gray-color);
+    font-size: 1rem;
 }
 
-.main__title{
-    margin: 20px 20px 0 20px;
-}
-
-.flex-container-sections{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    padding: var(--padding) var(--padding) 0 var(--padding);
-}
-
-.section {
-    background: var(--white-color);
-    padding: var(--padding);
-    border-radius: var(--border-radius);
-    margin-bottom: var(--margin);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.section__title {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 10px;
-    line-height: 1;
-    padding: 0 0 10px 0;
-}
-
-.sec__1{
-    flex-basis: 33%;
-}
-
-.sec__2{
-    flex-basis: 33%;
-}
-
-.sec__3{
-    flex-basis: 33%;
-}
-
-.sec__4{
-    flex-basis: 66%;
-}
-
-.sec__5{
-    flex-basis: 33%;
-}
-
-.section__image{
-    width: 100%;
-}
-
-.section__image-about{
-    width: 250px;
-}
-
-.list-items{
-    padding: 0 25px;
-    margin: -10px 0 0 0;
-}
-
-/* Filter controls */
-.filter-controls {
-    display: flex;
-    gap: calc(var(--margin) / 2);
-    margin-bottom: var(--margin);
-}
-
-.filter-controls button {
-    background: none;
-    border: 1px solid var(--gray-color);
-    padding: calc(var(--padding) / 2) var(--padding);
-    border-radius: var(--border-radius);
-    color: var(--text-color);
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.filter-controls button.active {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    border-color: var(--primary-color);
-}
-
-.list-items li {
-    border-radius: var(--border-radius);
-    background-color: var(--white-color);
-    color: var(--text-color);
-    transition: background-color 0.2s, color 0.2s;
-}
-
-/* Completed vs. To-do */
-.course--done {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    text-decoration: line-through;
-    opacity: 0.9;
-}
-
-/* Total credits */
-.total-credits {
+.content-column h2 {
+    color: var(--black-color);
+    font-size: 2rem;
     font-weight: bold;
-    margin-top: var(--margin);
+}
+
+.content-column p {
     color: var(--text-color);
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: var(--padding);
-    margin-top: var(--margin);
-    background: var(--gray-color);
+.primary-btn {
+    background-color: var(--primary-color);
     color: var(--white-color);
-    font-size: 0.9rem;
-    width: 100%;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-footer p {
-    margin: 5px 0;
+.primary-btn:hover {
+    background-color: #17a589; /* un tono más oscuro */
 }
 
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .title-container{
-        max-width: 100%;
-        padding:  0 20px;
-    }
-
-    .main {
-        width: 100%;
-    }
-
-    .header {
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .two-column-section {
         flex-direction: column;
         text-align: center;
-        padding: 0;
     }
 
-    .nav {
-        flex-direction: column;
+    .content-column {
         align-items: center;
-        padding: 10px 0 0 0 ;
-        background-color: #333;
-        width: 100%;
-        display: none;
     }
 
-    .flex-container-sections{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
+    .content-column h2 {
+        font-size: 1.5rem;
     }
 
-    .section-box-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 100%;
+    .content-column p {
+        font-size: 0.95rem;
     }
-    .dashboard-container {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 10px;
-        width: 100%;
-    }
-
-    .header-flex{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #menu{
-        content: "";
-        border: none;
-        background-color: transparent;
-        background-image: url('../images/Icons/lista.png');
-        background-size: cover;
-        background-position: center;
-        width: 40px;
-        height: 40px;
-        display: inline-block;
-        margin: 10px 0 20px 0;
-    }
-
-    #menu.open{
-        background-image: url('../images/Icons/cancelar.png');
-        display: inline-block;
-    }
-
-    .nav.open {
-        display: flex;
-        padding: 20px;
-    }
-
-    .header__section {
-        padding: 20px 0 0 0;
-    }
-
-    footer {
-        position: relative;
-    }
-}
-
-@media (max-width: 1024px) {
-    .title-container{
-        max-width: 100%;
-        padding:  0 20px;
-    }
-
-    .flex-container-sections{
-        display: flex;
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .section-box-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        max-width: 100%;
-    }
-    .dashboard-container {
-        display: grid;
-        grid-template-columns: 100%;
-        gap: 10px;
-        width: 100%;
-    }
-
 }
