@@ -50,7 +50,7 @@ const first_visit = `Welcome! Let us know if you have any questions`
 const fast_visit = `Back so soon! Awesome!`
 const long_last_visit = `You last visited days ago`
 
-const msToDays = 86_400_000; 
+const msPerDay = 86_400_000; 
 
 const headingLastSession = document.querySelector("#h4-last-session");
 
