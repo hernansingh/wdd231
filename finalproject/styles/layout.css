@@ -251,7 +251,7 @@
     margin-top: -100px;
   }
   .card img {
-    width: 50px;
+    width: 75px;
   }
   .feature__grid {
     grid-template-columns: 1fr;
@@ -264,6 +264,9 @@
   }
   .card {
     margin: 0;
+  }
+  .card img {
+    width: 75px;
   }
 }
 
