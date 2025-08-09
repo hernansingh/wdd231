@@ -6,10 +6,38 @@ menuButton.addEventListener("click", function () {
   navMobile.classList.toggle("open");
 });
 
-document.getElementById("currentyear").textContent = new Date().getFullYear();
-
-document.getElementById(
-  "lastModified"
-).textContent = `Last Modified: ${document.lastModified}`;
-
 document.getElementById("form-timestamp").value = new Date().toISOString();
+
+// QUOTES
+
+const quotesContainer = document.getElementById("quotes");
+
+function renderQuotes(list) {
+  quotesContainer.innerHTML = "";
+
+  list.forEach((q) => {
+    const fig = document.createElement("figure");
+    fig.className = "quote-card";
+    fig.innerHTML = `
+            <blockquote class="quote-text">“${q.text}”</blockquote>
+            <figcaption class="quote-author">— ${q.author}</figcaption>
+        `;
+    quotesContainer.appendChild(fig);
+  });
+}
+
+async function loadQuotes() {
+  try {
+    const res = await fetch("./data/quotes.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderQuotes(data);
+  } catch (err) {
+    quotesContainer.innerHTML = `
+        <p class="error">Quotes are unavailable right now.</p>
+      `;
+    console.error(err);
+  }
+}
+
+loadQuotes();
