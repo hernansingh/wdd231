@@ -142,16 +142,108 @@
     <section class="section feature">
       <div class="container feature__grid">
         <figure class="feature__media">
-          <img src="./images/placeholder-large.webp" width="820" height="560" loading="lazy" alt="Product preview" />
+          <img src="./images/produday-images-2.webp" width="820" height="560" loading="lazy" alt="Product preview" />
         </figure>
         <div class="feature__copy">
           <h2>Visualize progress</h2>
           <p>Simple charts and summaries help you see what’s working.</p>
           <p>Keep your momentum with streaks and averages.</p>
-          <a class="btn btn--ghost" href="./stats.html">See my stats</a>
+          <a class="btn btn--primary" href="./stats.html">See my stats</a>
         </div>
       </div>
     </section>
+
+    <div class="flex-row-layout section-layout-section">
+    <!-- LEFT COLUMN: headings + social cards -->
+    <section class="flex-column-layout contact-left">
+      <h3 class="h3-form">Contact</h3>
+      <h2 class="h2-form">We’d love to hear from you</h2>
+
+      <ul class="social-list">
+        <li>
+          <a class="social-card" href="#" aria-label="Facebook link">
+            <span class="social-card__thumb" aria-hidden="true">f</span>
+            <span class="social-card__name">Facebook</span>
+            <span class="social-card__handle">@produday</span>
+          </a>
+        </li>
+        <li>
+          <a class="social-card" href="#" aria-label="Instagram link">
+            <span class="social-card__thumb" aria-hidden="true">ig</span>
+            <span class="social-card__name">Instagram</span>
+            <span class="social-card__handle">@produday</span>
+          </a>
+        </li>
+        <li>
+          <a class="social-card" href="#" aria-label="WhatsApp link">
+            <span class="social-card__thumb" aria-hidden="true">wa</span>
+            <span class="social-card__name">WhatsApp</span>
+            <span class="social-card__handle">+54 351 760 8729</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- RIGHT COLUMN: form -->
+    <section class="flex-column-layout">
+      <h2 class="h2-form">Contact Form</h1>
+
+      <form method="GET" action="form-action.html"
+            class="form-styles flex-column-layout label-styles contact-grid"
+            novalidate>
+        
+        <!-- 2-col grid -->
+        <div class="grid-2">
+          <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" required autocomplete="given-name" />
+          </div>
+
+          <div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" required autocomplete="family-name" />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com" />
+          </div>
+
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+00 000 000 000" />
+          </div>
+
+          <div>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
+
+          <div>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">Select an option</option>
+              <option value="general">General question</option>
+              <option value="support">Support</option>
+              <option value="feedback">Feedback</option>
+              <option value="partnerships">Partnerships</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Full-width fields -->
+        <label for="message" class="mt-1">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message…" required></textarea>
+
+        <input type="hidden" id="form-timestamp" name="form-timestamp" />
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit-form-join">Send Message</button>
+        </div>
+      </form>
+    </section>
+  </div>
+
   </main>
 
   <!-- ===== Footer with lists / widgets ===== -->

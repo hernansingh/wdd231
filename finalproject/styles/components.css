@@ -103,23 +103,6 @@ body {
   background: #ffffff1a;
 }
 
-/* ===== Feature (image + text) ===== */
-.feature__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-6);
-  align-items: center;
-}
-.feature__media img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-.feature__copy p {
-  color: var(--muted);
-}
-
 /* ===== Footer ===== */
 .site-footer {
   background: #fff;
