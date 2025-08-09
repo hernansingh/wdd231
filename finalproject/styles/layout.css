@@ -1,0 +1,139 @@
+/* ===== Theme tokens ===== */
+:root{
+  --primary:#3085c9;
+  --text:#333;
+  --muted:#6c757d;
+  --bg:#f8f9fa;
+  --white:#fff;
+
+  --radius:14px;
+  --container:1200px;
+  --space-1:8px;  --space-2:12px; --space-3:16px; --space-4:24px;
+  --space-5:32px; --space-6:48px; --space-7:64px; --space-8:96px;
+}
+
+/* Header */
+.header {
+    background: var(--primary-color);
+    padding: var(--padding);
+    color: var(--white-color);
+}
+
+.header-flex{
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header__section {
+    display: flex;
+    align-items: center;
+}
+
+.header__image {
+    width: 300px;
+    margin-right: 10px;
+}
+
+#menu{
+    display: none;
+}
+
+/* Navigation */
+.nav, .nav-mobile{
+    display: flex;
+    gap: 35px;
+}
+
+.nav a, .nav-mobile a{
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: 700;
+    transition: color 0.3s;
+    font-size: 20px;
+}
+
+.nav-mobile{
+    display: none;
+}
+
+.nav a:hover {
+    color: #e4e4e4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+
+    .header-flex{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #menu{
+        content: "";
+        border: none;
+        background-color: transparent;
+        background-image: url('../images/Icons/lista.png');
+        background-size: cover;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        display: inline-block;
+        margin: 20px;
+    }
+
+    #menu:hover{
+        cursor: pointer;
+    }
+
+    #menu.open{
+        background-image: url('../images/Icons/cancelar.png');
+        display: inline-block;
+    }
+
+    .nav.open {
+        display: flex;
+        padding: 20px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .nav-mobile{
+        position: absolute;
+        z-index: 999;
+        top: 153px;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0 0 0 ;
+        background-color: #333;
+        width: 100%;
+        display: none;
+        flex-basis: 100%;
+    }
+
+    .nav-mobile.open{
+        display: flex;
+        padding: 20px;
+    }
+
+    .header__section {
+        padding: 20px;
+    }
+
+}

@@ -1,36 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Produday is a personal productivity and wellness tracker designed to help you organize your day, set goals, and stay motivated. Monitor your mood, sleep patterns, and habits while receiving dynamic quotes and actionable insights to improve your daily life.">
-        <meta name="author" content="Hernan Singh">
-        <title>Produday - Productivity & Wellness Tracker</title>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <!-- FONTS -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        
-        <!-- FAVICON -->
-        <link rel="icon" href="images/produday-icon.svg">
+    <title>Produday — Plan Your Day & Improve Wellness</title>
+    <meta name="description" content="Produday helps you plan your day, track goals, log mood and sleep, and stay motivated with dynamic quotes and insights." />
+    <meta name="author" content="Hernan Singh" />
 
-        <!-- REDES -->
-        <meta property="og:title" content="Produday - Organize Your Day & Improve Wellness" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://hernansingh.github.io/wdd231/produday/images/produday-preview.jpg" />
-        <meta property="og:url" content="https://hernansingh.github.io/wdd231/produday/" />
-        <meta property="og:description" content="Track your mood, sleep, and goals dynamically with Produday. Get personalized insights, motivational quotes, and tools to improve productivity and wellness." />
-        <meta property="og:site_name" content="Produday" />
+    <!-- SEO basics -->
+    <link rel="canonical" href="https://hernansingh.github.io/wdd231/finalproject/" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="#3085c9" />
 
-        <!-- CSS AND JS -->
-        <link rel="stylesheet" href="styles/style.css">
-        <script src="scripts/script.js" defer></script>
-    </head>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./images/produday-icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./images/produday-icon.svg" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Produday — Plan Your Day & Improve Wellness" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hernansingh.github.io/wdd231/finalproject/" />
+    <meta property="og:image" content="https://hernansingh.github.io/wdd231/finalproject/images/og-home.jpg" />
+    <meta property="og:description" content="Organize your day, track habits and sleep, and get data-driven motivation with Produday." />
+    <meta property="og:site_name" content="Produday" />
+
+    <!-- Twitter/X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Produday — Plan Your Day & Improve Wellness" />
+    <meta name="twitter:description" content="Plan, track, and stay motivated with Produday." />
+    <meta name="twitter:image" content="https://hernansingh.github.io/wdd231/finalproject/images/og-home.jpg" />
+
+    <!-- CSS & JS -->
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/layout.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <script type="module" src="./scripts/tracker.js" defer></script>
+</head>
 <body>
-    <footer>
-        
-    </footer>
-    
-</body>
+    <header class="header">
+        <div class="header-flex">
+            <section class="header__section">
+                <img src="./images/logo-produday-svg-white.svg" alt="Produday Logo" class="header__image">
+            </section>
+            <button id="menu"></button>
+            <nav class="nav">
+                <a href="./index.html" aria-current="page">Home</a>
+                <a href="./tracker.html">Tracker</a>
+                <a href="./stats.html">Stats</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        <nav class="nav-mobile">
+            <a href="./index.html" aria-current="page">Home</a>
+            <a href="./tracker.html">Tracker</a>
+            <a href="./stats.html">Stats</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+  <main>
+    <!-- ===== Hero (big image + headings + CTA) ===== -->
+    <section class="hero">
+      <div class="container hero__content">
+        <p class="eyebrow">Wellness & Productivity</p>
+        <h1>Plan your day. Track what matters.</h1>
+        <p class="lede">Set goals, log mood and sleep, and get data-driven motivation.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="./tracker.html">Start Tracking</a>
+          <a class="btn btn--ghost" href="#features">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Three feature cards ===== -->
+    <section id="features" class="section">
+      <div class="container cards3">
+        <article class="card">
+          <img src="./images/placeholder-1.webp" width="420" height="240" loading="lazy" alt="" />
+          <h3>Daily Planning</h3>
+          <p>Create simple, focused plans and reminders for your day.</p>
+          <a href="./tracker.html" class="text-link">Open tracker →</a>
+        </article>
+
+        <article class="card">
+          <img src="./images/placeholder-2.webp" width="420" height="240" loading="lazy" alt="" />
+          <h3>Sleep & Mood</h3>
+          <p>Log hours, bedtime/wake time, and mood to spot patterns.</p>
+          <a href="./tracker.html#daily-form" class="text-link">Log today →</a>
+        </article>
+
+        <article class="card">
+          <img src="./images/placeholder-3.webp" width="420" height="240" loading="lazy" alt="" />
+          <h3>Insights</h3>
+          <p>See streaks and averages that keep you motivated.</p>
+          <a href="./stats.html" class="text-link">View stats →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== Split layout: left text blocks / right stacked cards ===== -->
+    <section class="section split">
+      <div class="container split__grid">
+        <div class="split__left">
+          <h2>Stay consistent with tiny wins</h2>
+          <p>Produday focuses on clarity and small, repeatable actions.</p>
+          <p>Pick habits, track them quickly, and watch your progress grow.</p>
+          <p>No clutter. Just the signals you need.</p>
+        </div>
+
+        <div class="split__right">
+          <article class="mini-card">
+            <h4>Quick logging</h4>
+            <p>Two taps to log mood and sleep.</p>
+          </article>
+          <article class="mini-card">
+            <h4>Accessible design</h4>
+            <p>Keyboard-friendly and high-contrast UI.</p>
+          </article>
+          <article class="mini-card">
+            <h4>Local-first</h4>
+            <p>Your data is stored in your browser.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Wide CTA banner ===== -->
+    <section class="cta">
+      <div class="container cta__content">
+        <h2>Ready to build your streak?</h2>
+        <a class="btn btn--primary" href="./tracker.html">Start now</a>
+      </div>
+    </section>
+
+    <!-- ===== Big image + text (feature highlight) ===== -->
+    <section class="section feature">
+      <div class="container feature__grid">
+        <figure class="feature__media">
+          <img src="./images/placeholder-large.webp" width="820" height="560" loading="lazy" alt="Product preview" />
+        </figure>
+        <div class="feature__copy">
+          <h2>Visualize progress</h2>
+          <p>Simple charts and summaries help you see what’s working.</p>
+          <p>Keep your momentum with streaks and averages.</p>
+          <a class="btn btn--ghost" href="./stats.html">See my stats</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer with lists / widgets ===== -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <section class="footer__col">
+        <h4>Produday</h4>
+        <ul class="linklist">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./tracker.html">Tracker</a></li>
+          <li><a href="./stats.html">Stats</a></li>
+        </ul>
+      </section>
+
+      <section class="footer__col">
+        <h4>Resources</h4>
+        <ul class="linklist">
+          <li><a href="#">Getting started</a></li>
+          <li><a href="#">Help & feedback</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+      </section>
+
+      <section class="footer__col footer__newsletter">
+        <h4>Stay in the loop</h4>
+        <form action="form-action.html" method="GET" class="newsletter">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button class="btn btn--primary">Subscribe</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span id="year"></span> Produday. Fictitious demo content.</p>
+    </div>
+  </footer>
 </html>

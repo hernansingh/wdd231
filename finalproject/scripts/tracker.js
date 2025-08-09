@@ -1,9 +1,9 @@
 const menuButton = document.getElementById('menu');
-const nav = document.querySelector('.nav');
+const navMobile = document.querySelector('.nav-mobile');
 
 menuButton.addEventListener('click', function() {
     menuButton.classList.toggle('open');
-    nav.classList.toggle('open');
+    navMobile.classList.toggle('open');
 });
 
 document.getElementById('currentyear').textContent = new Date().getFullYear();
