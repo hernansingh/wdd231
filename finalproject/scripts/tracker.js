@@ -290,19 +290,17 @@ function renderMyHabits() {
   `;
 }
 
-if (myHabitsContainer) {
-  myHabitsContainer.addEventListener("click", function (e) {
-    const btn = e.target.closest(".btn-remove");
-    if (!btn) return;
+myHabitsContainer.addEventListener("click", function (e) {
+  const btn = e.target.closest(".btn-remove");
+  if (!btn) return;
 
-    const item = e.target.closest(".fav-item");
-    if (!item) return;
+  const item = e.target.closest(".fav-item");
+  if (!item) return;
 
-    const id = item.getAttribute("data-id");
-    removeFromMyHabits(id);
+  const id = item.getAttribute("data-id");
+  removeFromMyHabits(id);
 
-    // sincronizar catálogo
-    recomputeVisibleHabits();
-    displayHabitsOnContainer(state.visibleHabits);
-  });
-}
+  // sincronizar catálogo
+  recomputeVisibleHabits();
+  displayHabitsOnContainer(state.visibleHabits);
+});
