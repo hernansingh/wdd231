@@ -1,0 +1,164 @@
+[
+  {
+    "id": "h1",
+    "title": "Drink Water",
+    "category": "Health",
+    "difficulty": "Easy",
+    "recommended_time": "8 cups/day",
+    "icon": "💧",
+    "description": "Start your day with a glass of water and keep a bottle nearby."
+  },
+  {
+    "id": "h2",
+    "title": "Morning Stretch",
+    "category": "Health",
+    "difficulty": "Easy",
+    "recommended_time": "10 min",
+    "icon": "🤸‍♂️",
+    "description": "Perform light stretching to wake up your muscles and improve circulation."
+  },
+  {
+    "id": "h3",
+    "title": "Meditate",
+    "category": "Mindfulness",
+    "difficulty": "Medium",
+    "recommended_time": "10 min",
+    "icon": "🧘‍♀️",
+    "description": "Take a moment to focus on your breathing and clear your mind."
+  },
+  {
+    "id": "h4",
+    "title": "Read a Book",
+    "category": "Learning",
+    "difficulty": "Easy",
+    "recommended_time": "20 min",
+    "icon": "📖",
+    "description": "Dedicate time to reading to expand your knowledge and relax."
+  },
+  {
+    "id": "h5",
+    "title": "Plan Your Day",
+    "category": "Focus",
+    "difficulty": "Easy",
+    "recommended_time": "5 min",
+    "icon": "🗒️",
+    "description": "List your top priorities to keep your day organized and productive."
+  },
+  {
+    "id": "h6",
+    "title": "Exercise",
+    "category": "Fitness",
+    "difficulty": "Medium",
+    "recommended_time": "30 min",
+    "icon": "🏋️‍♂️",
+    "description": "Engage in physical activity to improve strength and endurance."
+  },
+  {
+    "id": "h7",
+    "title": "Journal",
+    "category": "Mindfulness",
+    "difficulty": "Easy",
+    "recommended_time": "10 min",
+    "icon": "✍️",
+    "description": "Write down your thoughts, goals, or reflections to process your day."
+  },
+  {
+    "id": "h8",
+    "title": "Gratitude List",
+    "category": "Mindfulness",
+    "difficulty": "Easy",
+    "recommended_time": "5 min",
+    "icon": "🙏",
+    "description": "List 3 things you are grateful for to cultivate positivity."
+  },
+  {
+    "id": "h9",
+    "title": "Review Goals",
+    "category": "Focus",
+    "difficulty": "Easy",
+    "recommended_time": "5 min",
+    "icon": "🎯",
+    "description": "Look over your short and long-term goals to stay motivated."
+  },
+  {
+    "id": "h10",
+    "title": "No Screen Before Bed",
+    "category": "Sleep",
+    "difficulty": "Medium",
+    "recommended_time": "30 min before sleep",
+    "icon": "📵",
+    "description": "Avoid screens to help your body prepare for restful sleep."
+  },
+  {
+    "id": "h11",
+    "title": "Take a Walk",
+    "category": "Health",
+    "difficulty": "Easy",
+    "recommended_time": "20 min",
+    "icon": "🚶‍♂️",
+    "description": "Go for a short walk to clear your mind and move your body."
+  },
+  {
+    "id": "h12",
+    "title": "Deep Breathing",
+    "category": "Mindfulness",
+    "difficulty": "Easy",
+    "recommended_time": "5 min",
+    "icon": "🌬️",
+    "description": "Practice deep breathing exercises to reduce stress and improve focus."
+  },
+  {
+    "id": "h13",
+    "title": "Learn a New Word",
+    "category": "Learning",
+    "difficulty": "Easy",
+    "recommended_time": "1 word/day",
+    "icon": "📝",
+    "description": "Expand your vocabulary with a new word and its meaning."
+  },
+  {
+    "id": "h14",
+    "title": "Cook a Healthy Meal",
+    "category": "Health",
+    "difficulty": "Medium",
+    "recommended_time": "30 min",
+    "icon": "🥗",
+    "description": "Prepare a balanced meal to nourish your body."
+  },
+  {
+    "id": "h15",
+    "title": "Practice a Hobby",
+    "category": "Mindfulness",
+    "difficulty": "Easy",
+    "recommended_time": "30 min",
+    "icon": "🎨",
+    "description": "Spend time on a creative or relaxing hobby."
+  },
+  {
+    "id": "h16",
+    "title": "Limit Caffeine",
+    "category": "Health",
+    "difficulty": "Medium",
+    "recommended_time": "Max 2 cups/day",
+    "icon": "☕",
+    "description": "Be mindful of your caffeine intake to support better sleep."
+  },
+  {
+    "id": "h17",
+    "title": "Review Finances",
+    "category": "Focus",
+    "difficulty": "Medium",
+    "recommended_time": "Weekly",
+    "icon": "💰",
+    "description": "Check your budget and expenses to stay financially healthy."
+  },
+  {
+    "id": "h18",
+    "title": "Stretch Before Bed",
+    "category": "Sleep",
+    "difficulty": "Easy",
+    "recommended_time": "5 min",
+    "icon": "🛌",
+    "description": "Light stretching before bed helps relax muscles and prepare for sleep."
+  }
+]

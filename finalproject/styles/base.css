@@ -9,6 +9,8 @@
   --padding: 16px;
   --margin: 16px;
   --border-radius: 8px;
+  --danger-color: #c1121f;
+  --muted-bg: #f5f7fa;
 }
 
 /* Global Styles */

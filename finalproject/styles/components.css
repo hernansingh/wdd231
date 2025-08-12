@@ -42,26 +42,17 @@ body {
   text-align: center;
   position: relative;
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-}
+
 .hero__content {
   position: relative;
   padding: var(--space-8) 0;
+  z-index: 1;
 }
 .eyebrow {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #e9f3ff;
   font-weight: 700;
-}
-.hero h1 {
-  font-size: clamp(28px, 5vw, 48px);
-  line-height: 1.1;
-  margin: 0.25rem 0 0.5rem;
 }
 .lede {
   color: #f0f4f8;
@@ -101,4 +92,354 @@ body {
 }
 .btn--ghost:hover {
   background: #ffffff1a;
+}
+
+/* ===== Hero Tracker ===== */
+.hero__tracker {
+  width: 100%;
+  height: 900px;
+  background: url("../images/produday-images-3.webp") no-repeat center
+      center/cover,
+    linear-gradient(#00000066, #00000066);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.hero__tracker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero__tracker h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.1;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.hero__tracker p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .hero__tracker h1 {
+    font-size: 2rem;
+  }
+
+  .hero__tracker p {
+    font-size: 1rem;
+  }
+
+  .hero__tracker {
+    background: url(../images/produday-images-2.webp) no-repeat center
+      center/cover !important;
+    height: 900px;
+  }
+}
+
+/* alias opcional para mantener compatibilidad con tus .btn previos */
+:root {
+  --primary: var(--primary-color);
+}
+
+/* Contenedor de filtros */
+.habits__filters {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.title__filter--section {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.title__filter--section h2 {
+  font-size: clamp(1.2rem, 2.6vw, 1.8rem);
+  color: var(--black-color);
+}
+.title__filter--section p {
+  color: var(--gray-color);
+  max-width: 720px;
+  margin: 0.35rem auto 1rem;
+}
+
+/* Barra de botones de filtro */
+.btn-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.25rem;
+}
+
+/* Botón de filtro (base) */
+.filter-btn {
+  appearance: none;
+  border: 1.5px solid #d7dee6;
+  background: #fff;
+  color: var(--text-color);
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease, transform 0.04s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.filter-btn:hover {
+  border-color: var(--primary-color);
+  background: #eef6fd;
+}
+.filter-btn:active {
+  transform: translateY(1px);
+}
+.filter-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(48, 133, 201, 0.25);
+  border-color: var(--primary-color);
+}
+
+.filter-btn.is-active,
+.filter-btn[aria-pressed="true"] {
+  background: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 14px rgba(48, 133, 201, 0.35);
+}
+
+.cards__habits--section {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+/* responsive */
+@media (max-width: 1000px) {
+  .cards__habits--section {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 620px) {
+  .cards__habits--section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*Grid Cards Habits*/
+.habit-card {
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.habit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icono grande y destacado */
+.habit-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Título del hábito */
+.habit-card__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Categoría y dificultad */
+.habit-card__category,
+.habit-card__difficulty,
+.habit-card__time {
+  font-size: 0.95rem;
+  color: var(--gray-color);
+  margin-bottom: 0.25rem;
+}
+
+/* Descripción */
+.habit-card__desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}
+
+/* Contenedor de todas las cards */
+#cards__habits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, max(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.title__filter--section,
+#my-habits-title {
+  margin-top: 8rem;
+}
+
+.title__filter--section h2,
+#my-habits-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.my-habits__list {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  max-width: 720px;
+}
+
+/* Card de favorito (sin hover visual) */
+.fav-item {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  padding: 1rem;
+  margin: 0 0 0.9rem 0;
+  background: #fff;
+  border: 1.5px solid #e5e9f2;
+  border-radius: 12px;
+  /* SÓLO una leve sombra fija (no cambia en hover) */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Eliminar cualquier hover previo en cards de favoritos */
+.fav-item:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-color: #e5e9f2;
+}
+
+/* Icono grande alineado al centro de su columna */
+.fav-item__icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenido */
+.fav-item__title {
+  margin: 0 0 0.35rem 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.fav-item__meta {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.fav-item__desc {
+  margin: 0 0 0.75rem 0;
+  color: var(--text-color);
+  font-size: 0.96rem;
+}
+
+/* Acciones (Set Reminder + Remove) */
+.fav-item__actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Reutilizá tu estilo de botones base si ya existe; si no, acá van minimalistas */
+.btn-reminder {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--primary-color);
+  color: var(--primary-color);
+  background: #fff;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease;
+}
+.btn-reminder:hover {
+  background: #eef6fd;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-remove {
+  appearance: none;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #6b7280;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    color 0.15s ease, transform 0.04s ease;
+}
+.btn-remove:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+.btn-remove:active {
+  transform: translateY(1px);
+}
+
+/* Mensaje vacío, reusa tu .muted si ya lo tenías */
+.my-habits .muted {
+  text-align: center;
+  margin: 1rem auto;
+  max-width: 720px;
+}
+
+.btn-add {
+  margin-top: 0.7rem;
+  appearance: none;
+  border: 1.5px solid #d7dee6;
+  background: #fff;
+  color: var(--text-color);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease,
+    color 0.2s ease, box-shadow 0.2s ease, transform 0.04s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.btn-add:hover {
+  border-color: var(--primary-color);
+  background: #eef6fd;
+}
+.btn-add:active {
+  transform: translateY(1px);
+}
+.btn-add:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(48, 133, 201, 0.25);
+  border-color: var(--primary-color);
 }
