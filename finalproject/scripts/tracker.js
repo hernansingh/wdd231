@@ -5,7 +5,7 @@ const habitsFilters = document.querySelector(".btn-filters");
 const state = {
   allHabits: [],
   visibleHabits: [],
-  activeFilter: "all", // Siempre arranca en "all"
+  activeFilter: "all",
 };
 
 // Setear estados de hábitos
@@ -59,6 +59,7 @@ async function loadHabits() {
   return true;
 }
 
+// Funcion para colocar "is-active" y "aria-pressed" en cada vez que se haga click en los filtros
 function updateFilterButtonsUI(nextFilter) {
   const btns = habitsFilters.querySelectorAll(".filter-btn");
   btns.forEach(function (btn) {
@@ -78,28 +79,23 @@ function updateFilterButtonsUI(nextFilter) {
 function wireFilterEvents() {
   habitsFilters.addEventListener("click", function (e) {
     const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
 
     const next = btn.dataset.filter || "all";
-    if (next === state.activeFilter) return;
+    if (next === state.activeFilter) return; //Si el botón ya está seleccionado, no se hace nada
 
     setActiveFilter(next);
     updateFilterButtonsUI(next);
     recomputeVisibleHabits();
-
-    if (state.visibleHabits.length === 0) {
-      showEmpty();
-    } else {
-      displayHabitsOnContainer(state.visibleHabits);
-    }
+    displayHabitsOnContainer(state.visibleHabits);
   });
 }
 
+//Iniciacion del contenedor
 async function initTracker() {
   setActiveFilter("all");
   updateFilterButtonsUI("all");
 
-  loadMyHabitsFromStorage(); // <-- rehidrata favoritos
+  loadMyHabitsFromStorage();
 
   const ok = await loadHabits();
   if (!ok) return;
@@ -111,7 +107,7 @@ async function initTracker() {
     displayHabitsOnContainer(state.visibleHabits);
   }
 
-  renderMyHabits(); // <-- pinta "My Habits"
+  renderMyHabits();
   wireFilterEvents();
 }
 
@@ -120,9 +116,8 @@ initTracker();
 function displayHabitsOnContainer(habits) {
   const cardsHTML = habits.map(function (habit) {
     const inFavs = isInMyHabits(habit.id);
-
-    // if tradicionales para accesibilidad/títulos
     let ariaPressed;
+
     if (inFavs) {
       ariaPressed = "true";
     } else {
@@ -136,8 +131,6 @@ function displayHabitsOnContainer(habits) {
       titleText = "Add to My Habits";
     }
 
-    // Si ya está añadido: botón deshabilitado "✔ Added"
-    // Si no: botón activo "＋ Add Habit"
     let addBtnHTML;
     if (inFavs) {
       addBtnHTML = `
@@ -177,7 +170,6 @@ function displayHabitsOnContainer(habits) {
 
         <div class="habit-card__actions">
           ${addBtnHTML}
-          <!-- NOTA: ya no hay Set Reminder aquí -->
         </div>
       </article>
     `;
@@ -189,7 +181,7 @@ function displayHabitsOnContainer(habits) {
 // CODE FOR SECTION MY HABITS
 const myHabitsContainer = document.getElementById("my-habits-container");
 const LS_KEY = "myHabits";
-state.myHabitsIds = []; // guardamos IDs como string
+state.myHabitsIds = [];
 
 function loadMyHabitsFromStorage() {
   try {
@@ -232,18 +224,15 @@ function removeFromMyHabits(id) {
   renderMyHabits();
 }
 
-// Click en "＋ Add Habit" del catálogo (si está deshabilitado no hace nada)
 habitsContainer.addEventListener("click", function (e) {
   const btn = e.target.closest(".btn-add");
   if (!btn) return;
 
-  // si el botón está deshabilitado, significa que ya está añadido
   if (btn.disabled) return;
 
   const id = btn.getAttribute("data-id");
   addToMyHabits(id);
 
-  // refrescar catálogo para que ese botón pase a "✔ Added" (deshabilitado)
   recomputeVisibleHabits();
   displayHabitsOnContainer(state.visibleHabits);
 });
@@ -251,7 +240,6 @@ habitsContainer.addEventListener("click", function (e) {
 function renderMyHabits() {
   if (!myHabitsContainer) return;
 
-  // estado vacío
   if (!state.myHabitsIds.length) {
     myHabitsContainer.innerHTML = `<p class="muted">No habits yet—add some from the catalog.</p>`;
     return;
@@ -259,7 +247,6 @@ function renderMyHabits() {
 
   const byId = new Map(state.allHabits.map((h) => [String(h.id), h]));
 
-  // armamos una lista vertical centrada con detalles
   const items = state.myHabitsIds
     .map(function (sid) {
       const h = byId.get(sid);
@@ -303,7 +290,6 @@ function renderMyHabits() {
   `;
 }
 
-// Listener de quitar
 if (myHabitsContainer) {
   myHabitsContainer.addEventListener("click", function (e) {
     const btn = e.target.closest(".btn-remove");
