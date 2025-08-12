@@ -281,7 +281,7 @@ body {
 
 #cards__habits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, max(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, 1fr);
   gap: 1.5rem;
   margin-top: 2rem;
 }
