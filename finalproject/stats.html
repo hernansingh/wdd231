@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Produday — Plan Your Day & Improve Wellness</title>
+    <title>Stats — Plan Your Day & Improve Wellness</title>
     <meta name="description" content="Produday helps you plan your day, track goals, log mood and sleep, and stay motivated with dynamic quotes and insights." />
     <meta name="author" content="Hernan Singh" />
 
@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/layout.css" />
     <link rel="stylesheet" href="./styles/components.css" />
-    <script type="module" src="./scripts/tracker.js" defer></script>
+    <script type="module" src="./scripts/stats.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -65,14 +65,21 @@
     </header>
 
   <main>
-    <section class="hero__tracker">
+    <section class="hero__tracker hero__stats">
       <div class="container hero__content">
         <p class="eyebrow">Goal Stats</p>
-        <h1>See and document your results!.</h1>
+        <h1>See and document your results!</h1>
         <p class="lede">Welcome to the stats page, here you will be able to document your life and see your progress.</p>
       </div>
     </section>
     
+    <section class="my-habits" aria-labelledby="my-habits-title">
+        <h2 id="my-habits-title">My Stats Habits</h2>
+        <div id="my-habits-stats" class="my-habits--list"></div>
+    </section>
+
+    </section>
+
     <div class="flex-row-layout section-layout-section">
         <!-- LEFT COLUMN: headings + social cards -->
         <section class="flex-column-layout contact-left">
