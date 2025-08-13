@@ -31,9 +31,9 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Utilities ===== */
+/* Utilities */
 
-/* ===== Hero ===== */
+/* Hero */
 .hero {
   background: linear-gradient(#00000066, #00000066),
     url("../images/produday-images-1.webp") center/cover no-repeat;
@@ -66,39 +66,82 @@ body {
 }
 
 /* Buttons */
-.btn {
+/* Base */
+.btn,
+.btn-remove,
+.btn-add,
+.btn-reminder {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 18px;
-  border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease, color 0.2s ease, transform 0.04s ease;
+}
+
+/* Tamaños */
+.btn,
+.btn-reminder {
+  padding: 10px 16px;
   border: 2px solid transparent;
 }
+.btn-remove,
+.btn-add {
+  padding: 0.5rem 0.75rem;
+  border: 1.5px solid #d7dee6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Variantes */
 .btn--primary {
-  background: var(--primary);
+  background: var(--primary, #3085c9);
   color: #fff;
 }
 .btn--primary:hover {
   filter: brightness(0.96);
 }
+
 .btn--ghost {
   background: transparent;
-  color: #fff;
-  border-color: #ffffff80;
+  color: var(--primary, #3085c9);
+  border-color: var(--primary, #3085c9);
 }
 .btn--ghost:hover {
-  background: #ffffff1a;
+  background: rgba(48, 133, 201, 0.08);
 }
 
-/* ===== Hero Tracker ===== */
-.hero__tracker {
+.btn-remove {
+  background: #fff;
+  color: #b91c1c;
+  border-color: #fecaca;
+}
+.btn-remove:hover {
+  background: #fef2f2;
+}
+
+.btn-add:hover {
+  border-color: var(--primary-color);
+  background: #eef6fd;
+}
+
+.btn-reminder {
+  border-color: var(--primary-color);
+  background: #fff;
+  color: var(--primary-color);
+}
+.btn-reminder:hover {
+  background: #eef6fd;
+}
+
+/* Hero Tracker */
+.hero__tracker,
+.hero__stats {
   width: 100%;
   height: 800px;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../images/produday-images-3.webp") no-repeat center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,34 +149,30 @@ body {
   color: #fff;
   font-family: Arial, sans-serif;
   position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) no-repeat
+    center/cover;
 }
 
+/* Fondo específico */
+.hero__tracker {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/produday-images-3.webp");
+}
 .hero__stats {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../images/stats-image-banner.webp") no-repeat center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  position: relative;
-  height: 800px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/stats-image-banner.webp");
 }
 
 @media (max-width: 768px) {
   .hero__tracker {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url(../images/produday-images-2.webp) no-repeat center center/cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../images/produday-images-2.webp");
     height: 900px;
   }
   .hero__stats {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url("../images/stats-image-banner.webp") no-repeat center center/cover;
     height: 900px;
   }
 }
-
 .habits__filters {
   max-width: 1200px;
   margin: 0 auto;
@@ -278,14 +317,14 @@ body {
   max-width: 720px;
 }
 
-/* Card de favorito (sin hover visual) */
+/* Card de favorito */
 .fav-item {
   display: grid;
   grid-template-columns: 56px 1fr;
-  gap: 1rem; /* unificado */
+  gap: 1rem;
   align-items: start;
   padding: 1rem;
-  margin-bottom: 1rem; /* unificado */
+  margin-bottom: 1rem;
   background: #fff;
   border: 1.5px solid #e5e9f2;
   border-radius: 12px;
@@ -300,7 +339,7 @@ body {
 
 .fav-item__icon {
   font-size: 1.8rem;
-  line-height: 1; /* mantenido de la primera versión */
+  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,7 +347,7 @@ body {
 
 .fav-item__title {
   margin: 0 0 0.35rem 0;
-  font-size: 1.2rem; /* valor mayor de las dos versiones */
+  font-size: 1.2rem;
   line-height: 1.2;
 }
 
@@ -319,13 +358,13 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
-  font-size: 0.95rem; /* promedio entre 0.95 y 0.9 */
+  font-size: 0.95rem;
 }
 
 .fav-item__desc {
   margin: 0 0 0.75rem 0;
-  color: var(--text-color, #333); /* versión con fallback */
-  font-size: 0.96rem; /* valor más preciso */
+  color: var(--text-color, #333);
+  font-size: 0.96rem;
 }
 
 .fav-item__actions {
@@ -336,28 +375,6 @@ body {
 
 .fav-item__notes h4 {
   margin: 0 0 0.5rem 0;
-}
-
-.btn-remove {
-  appearance: none;
-  border: 1.5px solid #e2e8f0;
-  background: #fff;
-  color: #6b7280;
-  border-radius: 8px;
-  padding: 0.5rem 0.75rem;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease,
-    color 0.15s ease, transform 0.04s ease;
-}
-.btn-remove:hover {
-  background: #fef2f2;
-  border-color: #fecaca;
-  color: #b91c1c;
-}
-.btn-remove:active {
-  transform: translateY(1px);
 }
 
 .my-habits .muted {
@@ -414,8 +431,9 @@ body {
   font-size: 0.9rem;
 }
 .note-item.is-empty {
-  color: #6b7280; /* gris medio */
+  color: #6b7280;
 }
+
 .note-date {
   font-weight: 600;
   margin-right: 4px;
@@ -459,52 +477,6 @@ body {
 
 .fav-item__actions {
   margin: 15px 0;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 8px !important;
-  font-weight: 700;
-  text-decoration: none;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: filter 0.2s ease, background-color 0.2s ease;
-}
-
-/* Botón primario (Save note, Set Daily Reminder) */
-.btn--primary {
-  background: var(--primary, #3085c9);
-  color: #fff;
-}
-.btn--primary:hover {
-  filter: brightness(0.96);
-}
-
-/* Botón ghost (opcional para decorativos) */
-.btn--ghost {
-  background: transparent;
-  color: var(--primary, #3085c9);
-  border-color: var(--primary, #3085c9);
-}
-.btn--ghost:hover {
-  background: rgba(48, 133, 201, 0.08);
-}
-
-.btn-remove {
-  background: #fff;
-  color: #b91c1c;
-  border: 1.5px solid #fecaca;
-  padding: 8px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-  cursor: pointer;
-}
-.btn-remove:hover {
-  background: #fef2f2;
 }
 
 .status {

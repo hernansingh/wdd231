@@ -143,7 +143,7 @@
   /* abierto */
   .nav[data-state="open"] {
     transform: scaleY(1);
-    max-height: 60vh; /* límite para que pueda scrollear si hay muchos links */
+    max-height: 60vh;
   }
 }
 
@@ -159,7 +159,7 @@
 
 .hero {
   width: 100%;
-  height: 100vh; /* Ocupa toda la pantalla */
+  height: 100vh;
   background: url(../images/produday-images-1.webp) no-repeat center
     center/cover;
   display: flex;
