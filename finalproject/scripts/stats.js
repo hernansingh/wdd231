@@ -160,7 +160,6 @@ function renderStats() {
       '"></span>' +
       "      </div>" +
       "    </div>" +
-      // Reminder (botón sin funcionalidad todavía)
       '    <div class="fav-item__actions">' +
       '      <button type="button" class="btn btn-reminder">Set Daily Reminder</button>' +
       '      <button type="button" class="btn-remove" data-action="remove-habit" data-id="' +
@@ -214,7 +213,7 @@ function handleSaveNote(habitId) {
 
   textarea.value = "";
   if (statusEl) statusEl.textContent = "Saved!";
-  renderStats(); // re-render simple y claro
+  renderStats();
 }
 
 function handleRemoveHabit(habitId) {
@@ -228,7 +227,6 @@ function handleRemoveHabit(habitId) {
   renderStats();
 }
 
-// 11) Evitar HTML inyectado en notas
 function escapeHTML(str) {
   return String(str)
     .replace(/&/g, "&amp;")
@@ -236,7 +234,7 @@ function escapeHTML(str) {
     .replace(/>/g, "&gt;");
 }
 
-// 12) Init
+// Init
 async function initStats() {
   loadMyHabitsFromStorage();
   loadHabitNotes();
