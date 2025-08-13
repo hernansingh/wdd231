@@ -17,6 +17,43 @@ function setAllHabits(list) {
   }
 }
 
+// Fetch de hábitos
+async function loadHabits() {
+  showLoading();
+  try {
+    const res = await fetch("data/habits.json");
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    setAllHabits(data);
+  } catch (err) {
+    console.error("Habits fetch error:", err);
+    showError("Could not load habits. Check your connection or try again.");
+    return false;
+  }
+  return true;
+}
+
+//Iniciacion del contenedor
+async function initTracker() {
+  setActiveFilter("all");
+  updateFilterButtonsUI("all");
+
+  loadMyHabitsFromStorage();
+
+  const ok = await loadHabits();
+  if (!ok) return;
+
+  recomputeVisibleHabits();
+  if (state.visibleHabits.length === 0) {
+    showEmpty();
+  } else {
+    displayHabitsOnContainer(state.visibleHabits);
+  }
+
+  renderMyHabits();
+  wireFilterEvents();
+}
+
 function setActiveFilter(value) {
   state.activeFilter = value;
 }
@@ -41,22 +78,6 @@ function showError(msg = "Failed to load habits. Please try again later.") {
 }
 function showEmpty(msg = "No habits found for this filter.") {
   habitsContainer.innerHTML = `<p class="muted">${msg}</p>`;
-}
-
-// Fetch de hábitos
-async function loadHabits() {
-  showLoading();
-  try {
-    const res = await fetch("data/habits.json");
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    setAllHabits(data);
-  } catch (err) {
-    console.error("Habits fetch error:", err);
-    showError("Could not load habits. Check your connection or try again.");
-    return false;
-  }
-  return true;
 }
 
 // Funcion para colocar "is-active" y "aria-pressed" en cada vez que se haga click en los filtros
@@ -89,27 +110,6 @@ function wireFilterEvents() {
     recomputeVisibleHabits();
     displayHabitsOnContainer(state.visibleHabits);
   });
-}
-
-//Iniciacion del contenedor
-async function initTracker() {
-  setActiveFilter("all");
-  updateFilterButtonsUI("all");
-
-  loadMyHabitsFromStorage();
-
-  const ok = await loadHabits();
-  if (!ok) return;
-
-  recomputeVisibleHabits();
-  if (state.visibleHabits.length === 0) {
-    showEmpty();
-  } else {
-    displayHabitsOnContainer(state.visibleHabits);
-  }
-
-  renderMyHabits();
-  wireFilterEvents();
 }
 
 initTracker();
