@@ -74,29 +74,35 @@
     <script src="./scripts/scripts.js" defer></script>
   </head>
   <body>
-    <header class="header">
-      <div class="header-flex">
-        <section class="header__section">
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand">
           <img
             src="./images/logo-produday-svg-white.svg"
             alt="Produday Logo"
-            class="header__image"
+            class="logo"
           />
-        </section>
-        <button id="menu"></button>
-        <nav class="nav">
+        </a>
+
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav id="primaryNav" class="nav" data-state="closed">
           <a href="./index.html" aria-current="page">Home</a>
           <a href="./tracker.html">Tracker</a>
           <a href="./stats.html">Stats</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
-      <nav class="nav-mobile">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="./tracker.html">Tracker</a>
-        <a href="./stats.html">Stats</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </header>
 
     <main>

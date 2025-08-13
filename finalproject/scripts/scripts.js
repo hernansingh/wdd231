@@ -1,9 +1,33 @@
-const menuButton = document.getElementById("menu");
-const navMobile = document.querySelector(".nav-mobile");
+const btnMenuResponsive = document.getElementById("menuToggle");
+const navigation = document.getElementById("primaryNav");
 
-menuButton.addEventListener("click", function () {
-  menuButton.classList.toggle("open");
-  navMobile.classList.toggle("open");
+// Toggle al click
+btnMenuResponsive.addEventListener("click", () => {
+  const expanded = btnMenuResponsive.getAttribute("aria-expanded") === "true";
+  btnMenuResponsive.setAttribute("aria-expanded", String(!expanded));
+  navigation.dataset.state = expanded ? "closed" : "open";
+});
+
+// Cerrar al elegir un link (en mobile)
+navigation.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", () => {
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      btnMenuResponsive.setAttribute("aria-expanded", "false");
+      navigation.dataset.state = "closed";
+    }
+  });
+});
+
+// Cerrar con Escape
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "Escape" &&
+    btnMenuResponsive.getAttribute("aria-expanded") === "true"
+  ) {
+    btnMenuResponsive.setAttribute("aria-expanded", "false");
+    navigation.dataset.state = "closed";
+    btnMenuResponsive.focus();
+  }
 });
 
 document.getElementById("form-timestamp").value = new Date().toISOString();

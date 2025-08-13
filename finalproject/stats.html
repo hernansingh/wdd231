@@ -41,31 +41,44 @@
     <link rel="stylesheet" href="./styles/layout.css" />
     <link rel="stylesheet" href="./styles/components.css" />
     <script src="./scripts/stats.js" defer></script>
+    <script src="./scripts/scripts.js" defer></script>
+
+
 </head>
 <body>
-    <header class="header">
-        <div class="header-flex">
-            <section class="header__section">
-                <img src="./images/logo-produday-svg-white.svg" alt="Produday Logo" class="header__image">
-            </section>
-            <button id="menu"></button>
-            <nav class="nav">
-                <a href="./index.html" aria-current="page">Home</a>
-                <a href="./tracker.html">Tracker</a>
-                <a href="./stats.html">Stats</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-        <nav class="nav-mobile">
-            <a href="./index.html" aria-current="page">Home</a>
-            <a href="./tracker.html">Tracker</a>
-            <a href="./stats.html">Stats</a>
-            <a href="#contact">Contact</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand">
+          <img
+            src="./images/logo-produday-svg-white.svg"
+            alt="Produday Logo"
+            class="logo"
+          />
+        </a>
+
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+
+        <nav id="primaryNav" class="nav" data-state="closed">
+          <a href="./index.html" aria-current="page">Home</a>
+          <a href="./tracker.html">Tracker</a>
+          <a href="./stats.html">Stats</a>
+          <a href="#contact">Contact</a>
         </nav>
+      </div>
     </header>
 
   <main>
-    <section class="hero__tracker hero__stats">
+    <section class="hero__stats">
       <div class="container hero__content">
         <p class="eyebrow">Goal Stats</p>
         <h1>See and document your results!</h1>

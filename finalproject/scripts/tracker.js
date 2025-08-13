@@ -62,6 +62,7 @@ async function loadHabits() {
 // Funcion para colocar "is-active" y "aria-pressed" en cada vez que se haga click en los filtros
 function updateFilterButtonsUI(nextFilter) {
   const btns = habitsFilters.querySelectorAll(".filter-btn");
+
   btns.forEach(function (btn) {
     let isActive;
     if (btn.dataset.filter === nextFilter) {
